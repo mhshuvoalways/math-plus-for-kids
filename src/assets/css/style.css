@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Baloo Chettan 2";
+  background: #f7f9fd;
+}
+
+.container {
+  width: calc(100% - 342px);
+  margin: auto;
+}
+
+/* Header start */
+.header {
+  background: #ffffff;
+  box-shadow: 0px 5px 20px 0px rgb(28 31 46 / 10%);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-bar-icon {
+  display: none !important;
+  font-size: 24px;
+  width: 25px;
+  height: 25px;
+  background: rgba(54, 41, 183, 0.09);
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.header-logo {
+  padding: 51px 0 51px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-logo-image {
+  cursor: pointer;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 38px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+.nav-desktop-item {
+  cursor: pointer;
+}
+
+/* Header end */
+
+/* Filter start */
+.filter-title {
+  margin: 89px 0 16px 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #07143b;
+}
+
+.filter-flex {
+  display: flex;
+  gap: 32.06px;
+  flex-wrap: wrap;
+}
+
+.filter-items {
+  width: 109.2px;
+  height: 113px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.filter-items__normal {
+  background: rgba(54, 41, 183, 0.09);
+  color: #07143b;
+}
+
+.filter-items__1st-grade {
+  background: #3629b7;
+  color: #07143b;
+}
+
+.filter-items__disable {
+  background: rgba(212, 212, 212, 0.2);
+  color: #d5d5d5;
+}
+
+.filter-year-counter {
+  width: 63.11px;
+  height: 63px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 50%;
+  margin: 13px 23.04px 0px 23.04px;
+}
+
+.filter-year-counter__disabled {
+  box-shadow: none;
+}
+
+.filter-year-number {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  height: 25px;
+  padding-top: 13px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-year-text {
+  font-weight: 600;
+  font-size: 10px;
+  width: 25.05px;
+  height: 15px;
+  padding: 0px 18.03px 13px 20.04px;
+}
+
+.filter-year-grade {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  height: 18px;
+  text-align: center;
+  margin-top: 5.05px;
+}
+
+.filter-year-grade__1st {
+  color: #ffffff;
+}
+
+.filter-year-grade-icon {
+  position: absolute;
+  width: 73.13px;
+  height: 42px;
+  left: 36.07px;
+  top: 71px;
+  color: #f3d5c8;
+}
+
+.filter-year-grade-icon-2 {
+  position: absolute;
+  width: 67.12px;
+  height: 36px;
+  left: 42.07px;
+  top: 77px;
+  color: #f3d5c8;
+}
+/* Filter end */
+
+/* Math start */
+.math {
+  background: #ffffff;
+  border: 1px solid #f2eeee;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  margin-top: 36px;
+  border-radius: 20px;
+}
+
+.math-content {
+  margin: 19px 38.57px 18px 33.06px;
+}
+
+.math-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.math-title {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 29px;
+  color: #494949;
+}
+
+.math-description {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  color: #8e8f8f;
+  margin-top: 5px;
+}
+
+.math-content-expend {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+}
+
+.math-content-expend-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #7b81a6;
+}
+
+.math-main-option {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.math-option {
+  border: 1px solid #f2eeee;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border-radius: 15px;
+  padding: 10px 0px 10px 20px;
+  margin-top: 15px;
+  width: 215px;
+}
+
+.math-option-number {
+  width: 33.63px;
+  height: 33px;
+  background: #f5f4fb;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3629b7;
+}
+
+.math-option-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #494949;
+  margin-top: 4px;
+}
+
+.math-option-description {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  color: #7b81a6;
+  margin-top: 4px;
+}
+
+/* Math end */
+
+/* Footer start */
+footer {
+  background: #ffffff;
+  border-radius: 0px 0px 12px 12px;
+  margin-top: 111px;
+  box-shadow: 0px -5px 20px 0px rgb(28 31 46 / 10%);
+}
+
+.footer-logo {
+  cursor: pointer;
+  margin: 38px 0 7px 0;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.footer-year {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8e8f8f;
+  margin-bottom: 37px;
+}
+
+.footer-menu {
+  display: flex;
+  align-items: center;
+  gap: 67px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.footer-menu-item {
+  cursor: pointer;
+}
+/* Footer end */

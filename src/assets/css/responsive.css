@@ -1,0 +1,50 @@
+@media only screen and (max-width: 790px) {
+  .container {
+    width: calc(100% - 150px);
+  }
+  .math-option {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+  .header-content {
+    display: block;
+  }
+  .header-bar-icon {
+    display: block !important;
+  }
+  .nav-desktop {
+    display: none;
+  }
+  .nav-mobile {
+    display: block;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    background: rgba(54, 41, 183, 0.09);
+    border-radius: 5px;
+    border: 1px solid rgba(54, 41, 183, 0.09);
+  }
+  .nav-mobile-item {
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  .nav-mobile-item:hover {
+    background: #ffffff;
+  }
+  .filter-flex {
+    justify-content: center;
+  }
+  .footer-flex {
+    justify-content: center;
+    gap: 5px;
+  }
+  .footer-menu {
+    gap: 20px;
+    padding: 20px;
+  }
+}
