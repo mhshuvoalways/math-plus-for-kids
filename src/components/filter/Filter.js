@@ -70,6 +70,15 @@ const Filter = () => {
             6th grade
           </p>
         </div>
+        <div className="filter-items filter-items__disable">
+          <div className="filter-year-counter filter-year-counter__disabled">
+            <p className="filter-year-number">12-13</p>
+            <p className="filter-year-text">years</p>
+          </div>
+          <p className="filter-year-grade filter-year-grade__kinder">
+            7th Food
+          </p>
+        </div>
       </div>
     </div>
   );
