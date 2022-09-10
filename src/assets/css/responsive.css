@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @media only screen and (max-width: 790px) {
   .container {
     width: calc(100% - 150px);
@@ -36,10 +43,17 @@
   .nav-mobile-item:hover {
     background: #ffffff;
   }
+  .filter-title {
+    text-align: center;
+  }
   .filter-flex {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   .footer-flex {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     gap: 5px;
   }

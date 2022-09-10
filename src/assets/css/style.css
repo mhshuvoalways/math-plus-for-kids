@@ -1,9 +1,17 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Baloo Chettan 2";
   background: #f7f9fd;
@@ -17,12 +25,19 @@ body {
 /* Header start */
 .header {
   background: #ffffff;
+  -webkit-box-shadow: 0px 5px 20px 0px rgb(28 31 46 / 10%);
   box-shadow: 0px 5px 20px 0px rgb(28 31 46 / 10%);
 }
 
 .header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -40,7 +55,11 @@ body {
 
 .header-logo {
   padding: 51px 0 51px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 20px;
 }
@@ -50,6 +69,8 @@ body {
 }
 
 .nav-desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 38px;
   font-weight: 600;
@@ -77,8 +98,11 @@ body {
 }
 
 .filter-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 32.06px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -86,18 +110,20 @@ body {
   width: 109.2px;
   height: 113px;
   border-radius: 15px;
-  cursor: pointer;
   position: relative;
+  padding-top: 1px;
 }
 
 .filter-items__normal {
   background: rgba(54, 41, 183, 0.09);
   color: #07143b;
+  cursor: pointer;
 }
 
 .filter-items__1st-grade {
   background: #3629b7;
   color: #07143b;
+  cursor: pointer;
 }
 
 .filter-items__disable {
@@ -109,12 +135,14 @@ body {
   width: 63.11px;
   height: 63px;
   background: #ffffff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.14);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.14);
   border-radius: 50%;
-  margin: 13px 23.04px 0px 23.04px;
+  margin: 12px 23.04px 0px 23.04px;
 }
 
 .filter-year-counter__disabled {
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -124,7 +152,11 @@ body {
   line-height: 29px;
   height: 25px;
   padding-top: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -172,6 +204,9 @@ body {
 .math {
   background: #ffffff;
   border: 1px solid #f2eeee;
+  -webkit-box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
   box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
     0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
     0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
@@ -184,9 +219,16 @@ body {
 }
 
 .math-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -206,7 +248,11 @@ body {
 }
 
 .math-content-expend {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 13px;
   cursor: pointer;
@@ -220,13 +266,19 @@ body {
 }
 
 .math-main-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 25px;
 }
 
 .math-option {
   border: 1px solid #f2eeee;
+  -webkit-box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
   box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
     0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
     0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
@@ -244,8 +296,14 @@ body {
   font-weight: 900;
   font-size: 20px;
   line-height: 29px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: #3629b7;
 }
@@ -273,6 +331,7 @@ footer {
   background: #ffffff;
   border-radius: 0px 0px 12px 12px;
   margin-top: 111px;
+  -webkit-box-shadow: 0px -5px 20px 0px rgb(28 31 46 / 10%);
   box-shadow: 0px -5px 20px 0px rgb(28 31 46 / 10%);
 }
 
@@ -282,8 +341,13 @@ footer {
 }
 
 .footer-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -296,7 +360,11 @@ footer {
 }
 
 .footer-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 67px;
   font-weight: 600;

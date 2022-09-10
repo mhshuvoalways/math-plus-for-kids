@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+import React, { useState } from "react";
+import Grade1st from "../../assets/images/Grade1st.svg";
+import Grade1st2 from "../../assets/images/Grade1st-2.svg";
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+const Filter = () => {
+  const filterData = [
+    {
+      id: "1",
+      filterYearNumber: "5-6",
+      grade: "Kindergarden",
+      isActive: false,
+    },
+    {
+      id: "2",
+      filterYearNumber: "6-7",
+      grade: "1st grade",
+      isActive: true,
+    },
+    {
+      id: "3",
+      filterYearNumber: "7-8",
+      grade: "2nd grade",
+      isActive: false,
+    },
+    {
+      id: "4",
+      filterYearNumber: "8-9",
+      grade: "3rd grade",
+      isActive: false,
+    },
+    {
+      id: "5",
+      filterYearNumber: "9-10",
+      grade: "4th grade",
+      isActive: "disable",
+    },
+    {
+      id: "6",
+      filterYearNumber: "10-11",
+      grade: "5th grade",
+      isActive: "disable",
+    },
+    {
+      id: "7",
+      filterYearNumber: "11-12",
+      grade: "6th grade",
+      isActive: "disable",
+    },
+    {
+      id: "8",
+      filterYearNumber: "12-13",
+      grade: "7th Food",
+      isActive: "disable",
+    },
+  ];
 
-## Available Scripts
+  return (
+    <div className="container">
+      <p className="filter-title">Course Category</p>
+      <div className="filter-flex">
+        {filterData.map((el) => (
+          <div>
+            {el.isActive === "disable" ? (
+              <div className="filter-items filter-items__disable">
+                <div className="filter-year-counter filter-year-counter__disabled">
+                  <p className="filter-year-number">{el.filterYearNumber}</p>
+                  <p className="filter-year-text">years</p>
+                </div>
+                <p className="filter-year-grade filter-year-grade__kinder">
+                  {el.grade}
+                </p>
+              </div>
+            ) : el.isActive ? (
+              <div className="filter-items filter-items__1st-grade">
+                <div className="filter-year-counter">
+                  <p className="filter-year-number">{el.filterYearNumber}</p>
+                  <p className="filter-year-text">years</p>
+                </div>
+                <p className="filter-year-grade filter-year-grade__1st">
+                  {el.grade}
+                </p>
+                <img src={Grade1st} alt="" className="filter-year-grade-icon" />
+                <img
+                  src={Grade1st2}
+                  alt=""
+                  className="filter-year-grade-icon-2"
+                />
+              </div>
+            ) : (
+              <div className="filter-items filter-items__normal" key={el.id}>
+                <div className="filter-year-counter">
+                  <p className="filter-year-number">{el.filterYearNumber}</p>
+                  <p className="filter-year-text">years</p>
+                </div>
+                <p className="filter-year-grade filter-year-grade__kinder">
+                  {el.grade}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default Filter;
