@@ -51,6 +51,9 @@
     -ms-flex-pack: center;
     justify-content: center;
   }
+  footer {
+    margin-top: 111px;
+  }
   .footer-flex {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
