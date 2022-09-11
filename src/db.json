@@ -1,0 +1,72 @@
+{
+  "header": {
+    "logo": "images/Logo.png",
+    "nav": [
+      {
+        "id": "1",
+        "name": "Drills"
+      },
+      {
+        "id": "2",
+        "name": "How it works"
+      },
+      {
+        "id": "2",
+        "name": "About"
+      }
+    ]
+  },
+  "filter": {
+    "filter-title": "Course Category",
+    "filter-items": [
+      {
+        "id": "1",
+        "filterYearNumber": "5-6",
+        "grade": "Kindergarden",
+        "isActive": false
+      },
+      {
+        "id": "2",
+        "filterYearNumber": "6-7",
+        "grade": "1st grade",
+        "isActive": false
+      },
+      {
+        "id": "3",
+        "filterYearNumber": "7-8",
+        "grade": "2nd grade",
+        "isActive": false
+      },
+      {
+        "id": "4",
+        "filterYearNumber": "8-9",
+        "grade": "3rd grade",
+        "isActive": false
+      },
+      {
+        "id": "5",
+        "filterYearNumber": "9-10",
+        "grade": "4th grade",
+        "isActive": "disable"
+      },
+      {
+        "id": "6",
+        "filterYearNumber": "10-11",
+        "grade": "5th grade",
+        "isActive": "disable"
+      },
+      {
+        "id": "7",
+        "filterYearNumber": "11-12",
+        "grade": "6th grade",
+        "isActive": "disable"
+      },
+      {
+        "id": "8",
+        "filterYearNumber": "12-13",
+        "grade": "7th Food",
+        "isActive": "disable"
+      }
+    ]
+  }
+}

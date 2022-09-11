@@ -7,9 +7,11 @@ import Footer from "./footer/Footer";
 const index = () => {
   return (
     <div>
-      <Header />
-      <Filter />
-      <Math />
+      <div className="wrapper">
+        <Header />
+        <Filter />
+        <Math />
+      </div>
       <Footer />
     </div>
   );
