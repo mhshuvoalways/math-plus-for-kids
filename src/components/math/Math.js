@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ArrowUp from "../../assets/images/ArrowUp.svg";
 import ArrowDown from "../../assets/images/ArrowDown.svg";
 
-const Math = () => {
+const Math = ({ math, isActiveId }) => {
   const [addition, setAddition] = useState(true);
   const [subtraction, setSubtraction] = useState(false);
   const [multiplications, setMultiplications] = useState(false);
@@ -13,7 +13,7 @@ const Math = () => {
         <div className="math-content">
           <div className="math-top">
             <div className="math-flex">
-              <p className="math-title">Addition</p>
+              <p className="math-title">{math.addition.title}</p>
               <div
                 className="math-content-expend"
                 onClick={() => setAddition(!addition)}
@@ -31,40 +31,24 @@ const Math = () => {
                 )}
               </div>
             </div>
-            <p className="math-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei
-            </p>
+            <p className="math-description">{math.addition.description}</p>
           </div>
           {addition && (
             <div className="math-main-option">
-              <div className="math-option">
-                <p className="math-option-number">10</p>
-                <p className="math-option-title">Add Upto 10</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">20</p>
-                <p className="math-option-title">Add Upto 20</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">30</p>
-                <p className="math-option-title">Add Upto 30</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">40</p>
-                <p className="math-option-title">Add Upto 40</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
+              {math.addition.options.map((el) =>
+                el.filterItems.map(
+                  (item) =>
+                    item === isActiveId && (
+                      <div className="math-option" key={el._id}>
+                        <p className="math-option-number">{el.number}</p>
+                        <p className="math-option-title">{el.title}</p>
+                        <p className="math-option-description">
+                          {el.description}
+                        </p>
+                      </div>
+                    )
+                )
+              )}
             </div>
           )}
         </div>
@@ -73,7 +57,7 @@ const Math = () => {
         <div className="math-content">
           <div className="math-top">
             <div className="math-flex">
-              <p className="math-title">Subtraction</p>
+              <p className="math-title">{math.subtraction.title}</p>
               <div
                 className="math-content-expend"
                 onClick={() => setSubtraction(!subtraction)}
@@ -91,39 +75,25 @@ const Math = () => {
                 )}
               </div>
             </div>
-            <p className="math-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei
-            </p>
+            <p className="math-description">{math.subtraction.description}</p>
           </div>
           {subtraction && (
             <div className="math-main-option">
-              <div className="math-option">
-                <p className="math-option-number">10</p>
-                <p className="math-option-title">Add Upto 10</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">20</p>
-                <p className="math-option-title">Add Upto 20</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">30</p>
-                <p className="math-option-title">Add Upto 30</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">40</p>
-                <p className="math-option-title">Add Upto 40</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
+              <div className="math-main-option">
+                {math.subtraction.options.map((el) =>
+                  el.filterItems.map(
+                    (item) =>
+                      item === isActiveId && (
+                        <div className="math-option" key={el._id}>
+                          <p className="math-option-number">{el.number}</p>
+                          <p className="math-option-title">{el.title}</p>
+                          <p className="math-option-description">
+                            {el.description}
+                          </p>
+                        </div>
+                      )
+                  )
+                )}
               </div>
             </div>
           )}
@@ -133,7 +103,7 @@ const Math = () => {
         <div className="math-content">
           <div className="math-top">
             <div className="math-flex">
-              <p className="math-title">Multiplications</p>
+              <p className="math-title">{math.multiplications.title}</p>
               <div
                 className="math-content-expend"
                 onClick={() => setMultiplications(!multiplications)}
@@ -152,38 +122,26 @@ const Math = () => {
               </div>
             </div>
             <p className="math-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei
+              {math.multiplications.description}
             </p>
           </div>
           {multiplications && (
             <div className="math-main-option">
-              <div className="math-option">
-                <p className="math-option-number">10</p>
-                <p className="math-option-title">Add Upto 10</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">20</p>
-                <p className="math-option-title">Add Upto 20</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">30</p>
-                <p className="math-option-title">Add Upto 30</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-              <div className="math-option">
-                <p className="math-option-number">40</p>
-                <p className="math-option-title">Add Upto 40</p>
-                <p className="math-option-description">
-                  Lorem ipsum dolor sit amet,
-                </p>
+              <div className="math-main-option">
+                {math.multiplications.options.map((el) =>
+                  el.filterItems.map(
+                    (item) =>
+                      item === isActiveId && (
+                        <div className="math-option" key={el._id}>
+                          <p className="math-option-number">{el.number}</p>
+                          <p className="math-option-title">{el.title}</p>
+                          <p className="math-option-description">
+                            {el.description}
+                          </p>
+                        </div>
+                      )
+                  )
+                )}
               </div>
             </div>
           )}

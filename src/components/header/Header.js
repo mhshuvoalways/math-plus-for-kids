@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Logo from "../../assets/images/Logo.svg";
 
-const Header = () => {
+const Header = ({ header }) => {
   const [navShow, setNavShow] = useState(false);
 
   return (
@@ -20,20 +19,28 @@ const Header = () => {
                 onClick={() => setNavShow(true)}
               ></i>
             )}
-            <img src={Logo} alt="Logo" className="header-logo-image" />
+            <img
+              src={header.logo.image}
+              alt="Logo"
+              className="header-logo-image"
+            />
           </div>
           <nav className="nav-desktop">
-            <p className="nav-desktop-item">Drills</p>
-            <p className="nav-desktop-item">How it works</p>
-            <p className="nav-desktop-item">About</p>
+            {header.nav.map((el) => (
+              <p className="nav-desktop-item" key={el._id}>
+                {el.name}
+              </p>
+            ))}
           </nav>
         </div>
       </div>
       {navShow && (
         <nav className="nav-mobile">
-          <p className="nav-mobile-item">Drills</p>
-          <p className="nav-mobile-item">How it works</p>
-          <p className="nav-mobile-item">About</p>
+          {header.nav.map((el) => (
+            <p className="nav-mobile-item" key={el._id}>
+              {el.name}
+            </p>
+          ))}
         </nav>
       )}
     </div>

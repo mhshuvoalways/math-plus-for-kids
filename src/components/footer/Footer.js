@@ -1,18 +1,20 @@
 import React from "react";
-import LogoFooter from "../../assets/images/LogoFooter.svg";
 
-const Footer = () => {
+const Footer = ({ footer }) => {
   return (
     <footer>
       <div className="container">
         <div className="footer-flex">
           <div>
-            <img src={LogoFooter} alt="Logo" className="footer-logo" />
-            <p className="footer-year">2022 </p>
+            <img src={footer.logo.image} alt="Logo" className="footer-logo" />
+            <p className="footer-year">{footer.logo.year}</p>
           </div>
           <div className="footer-menu">
-            <p className="footer-menu-item">About</p>
-            <p className="footer-menu-item">Contact us</p>
+            {footer.nav.map((el) => (
+              <p className="footer-menu-item" key={el._id}>
+                {el.name}
+              </p>
+            ))}
           </div>
         </div>
       </div>
