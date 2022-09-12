@@ -31,7 +31,9 @@ const Index = ({ data }) => {
     if (localId) {
       const findTrue = temp.findIndex((el) => el.isActive === true);
       const findData2 = temp[findTrue];
-      temp[findData2] = findData2.isActive = false;
+      if (findData2) {
+        temp[findData2] = findData2.isActive = false;
+      }
       const findIndex = temp.findIndex((el) => el._id === localId);
       const findData = temp[findIndex];
       temp[findData] = findData.isActive = true;
