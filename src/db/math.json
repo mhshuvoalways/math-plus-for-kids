@@ -1,29 +1,39 @@
 {
-  "configuration": "horizontal",
+  "configuration": "vertical",
   "math": [
     {
       "_id": 1,
-      "oparations": "9-5",
+      "firstNumber": "9",
+      "secondNumber": "5",
+      "oparation": "-",
       "currectAnsware": "4"
     },
     {
       "_id": 2,
-      "oparations": "5-3",
-      "currectAnsware": "2"
+      "firstNumber": "7",
+      "secondNumber": "2",
+      "oparation": "-",
+      "currectAnsware": "5"
     },
     {
       "_id": 3,
-      "oparations": "9-8",
-      "currectAnsware": "1"
+      "firstNumber": "2",
+      "secondNumber": "0",
+      "oparation": "-",
+      "currectAnsware": "2"
     },
     {
       "_id": 4,
-      "oparations": "7-1",
-      "currectAnsware": "6"
+      "firstNumber": "7",
+      "secondNumber": "3",
+      "oparation": "-",
+      "currectAnsware": "4"
     },
     {
       "_id": 5,
-      "oparations": "6-0",
+      "firstNumber": "9",
+      "secondNumber": "3",
+      "oparation": "-",
       "currectAnsware": "6"
     }
   ]

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import ArrowUp from "../../assets/images/ArrowUp.svg";
 import ArrowDown from "../../assets/images/ArrowDown.svg";
 
@@ -34,7 +35,11 @@ const Math = ({ math, isActiveId, modalHandler }) => {
             <p className="math-description">{math.addition.description}</p>
           </div>
           {addition && (
-            <div className="math-main-option">
+            <motion.div
+              className="math-main-option"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, height: "100%" }}
+            >
               {math.addition.options.map((el) =>
                 el.filterItems.map(
                   (item) =>
@@ -53,7 +58,7 @@ const Math = ({ math, isActiveId, modalHandler }) => {
                     )
                 )
               )}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
@@ -82,7 +87,11 @@ const Math = ({ math, isActiveId, modalHandler }) => {
             <p className="math-description">{math.subtraction.description}</p>
           </div>
           {subtraction && (
-            <div className="math-main-option">
+            <motion.div
+              className="math-main-option"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, height: "100%" }}
+            >
               {math.subtraction.options.map((el) =>
                 el.filterItems.map(
                   (item) =>
@@ -101,7 +110,7 @@ const Math = ({ math, isActiveId, modalHandler }) => {
                     )
                 )
               )}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
@@ -132,7 +141,11 @@ const Math = ({ math, isActiveId, modalHandler }) => {
             </p>
           </div>
           {multiplications && (
-            <div className="math-main-option">
+            <motion.div
+              className="math-main-option"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, height: "100%" }}
+            >
               {math.multiplications.options.map((el) =>
                 el.filterItems.map(
                   (item) =>
@@ -151,7 +164,7 @@ const Math = ({ math, isActiveId, modalHandler }) => {
                     )
                 )
               )}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

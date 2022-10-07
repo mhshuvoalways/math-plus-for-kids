@@ -66,7 +66,7 @@ const Score = ({ doitagainHandler, answare }) => {
                 alt=""
                 className=""
               />
-              <p>{`${answare.oparations} = ${answare.userAnsware}`}</p>
+              <p>{`${answare.firstNumber} ${answare.oparation} ${answare.secondNumber} = ${answare.userAnsware}`}</p>
             </div>
             <p className="short-overview-sec-dec">
               Solved in{" "}

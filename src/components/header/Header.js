@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Header = ({ header }) => {
   const [navShow, setNavShow] = useState(false);
@@ -34,15 +35,21 @@ const Header = ({ header }) => {
           </nav>
         </div>
       </div>
-      {navShow && (
-        <nav className="nav-mobile">
-          {header.nav.map((el) => (
+      <nav className="nav-mobile">
+        {header.nav.map((el) => (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: navShow ? 1 : 0,
+              height: navShow ? "50px" : "0px",
+            }}
+          >
             <p className="nav-mobile-item" key={el._id}>
               {el.name}
             </p>
-          ))}
-        </nav>
-      )}
+          </motion.div>
+        ))}
+      </nav>
     </div>
   );
 };

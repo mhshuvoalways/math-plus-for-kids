@@ -68,9 +68,12 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 29px;
-    background: rgba(54, 41, 183, 0.09);
+    background-color: #f7f9fd;
     border-radius: 5px;
     border: 1px solid rgba(54, 41, 183, 0.09);
+    position: absolute;
+    width: 100%;
+    z-index: 100;
   }
   .nav-mobile-item {
     cursor: pointer;
@@ -98,6 +101,7 @@
   }
   .actual-math-answare {
     width: 100%;
+    font-size: 20vw;
   }
   .actual-math-next-btn {
     width: 100%;
@@ -153,12 +157,17 @@
     padding: 5px 25px;
     margin-top: 10px;
   }
+  .math-vertical {
+    font-size: 20vw;
+  }
   .math-horizontal {
-    font-size: 80px;
     gap: 5px;
   }
   .actual-math-answare__horizontal {
-    font-size: 80px;
+    font-size: 15vw;
+  }
+  .actual-math-number-end {
+    padding-right: 30px;
   }
   .count {
     padding: 5px;
@@ -181,8 +190,5 @@
   }
   .short-overview-items {
     justify-content: center;
-  }
-  .score-score {
-    width: 100%;
   }
 }

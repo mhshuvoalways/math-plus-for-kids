@@ -6,7 +6,6 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
   const [countSec, setCountSec] = useState(0);
 
   const mathIndex = mathCount.finalMath.math[mathCount.serialIndex];
-  const oparation = mathIndex.oparations.split("");
 
   const inputRef = useRef(null);
 
@@ -66,9 +65,9 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
     <form className="actual-math">
       {mathCount.finalMath.configuration === "vertical" ? (
         <div className="math-vertical">
-          <p className="actual-math-number">{oparation[0]}</p>
+          <p className="actual-math-number">{mathIndex.firstNumber}</p>
           <p className="actual-math-number actual-math-number-end">
-            {oparation[1]} {oparation[2]}
+            {mathIndex.oparation} {mathIndex.secondNumber}
           </p>
           <p className="actual-math-border"></p>
           <input
@@ -85,9 +84,9 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
       ) : (
         mathCount.finalMath.configuration === "horizontal" && (
           <div className="math-horizontal">
-            <p>{oparation[0]}</p>
+            <p>{mathIndex.firstNumber}</p>
             <p>
-              {oparation[1]} {oparation[2]}
+              {mathIndex.oparation} {mathIndex.secondNumber}
             </p>
             <p>=</p>
             <input
