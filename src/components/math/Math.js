@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ArrowUp from "../../assets/images/ArrowUp.svg";
 import ArrowDown from "../../assets/images/ArrowDown.svg";
 
-const Math = ({ math, isActiveId }) => {
+const Math = ({ math, isActiveId, modalHandler }) => {
   const [addition, setAddition] = useState(true);
   const [subtraction, setSubtraction] = useState(false);
   const [multiplications, setMultiplications] = useState(false);
@@ -39,7 +39,11 @@ const Math = ({ math, isActiveId }) => {
                 el.filterItems.map(
                   (item) =>
                     item === isActiveId && (
-                      <div className="math-option" key={el._id}>
+                      <div
+                        className="math-option"
+                        key={el._id}
+                        onClick={() => modalHandler(el)}
+                      >
                         <p className="math-option-number">{el.number}</p>
                         <p className="math-option-title">{el.title}</p>
                         <p className="math-option-description">
@@ -79,22 +83,24 @@ const Math = ({ math, isActiveId }) => {
           </div>
           {subtraction && (
             <div className="math-main-option">
-              <div className="math-main-option">
-                {math.subtraction.options.map((el) =>
-                  el.filterItems.map(
-                    (item) =>
-                      item === isActiveId && (
-                        <div className="math-option" key={el._id}>
-                          <p className="math-option-number">{el.number}</p>
-                          <p className="math-option-title">{el.title}</p>
-                          <p className="math-option-description">
-                            {el.description}
-                          </p>
-                        </div>
-                      )
-                  )
-                )}
-              </div>
+              {math.subtraction.options.map((el) =>
+                el.filterItems.map(
+                  (item) =>
+                    item === isActiveId && (
+                      <div
+                        className="math-option"
+                        key={el._id}
+                        onClick={() => modalHandler(el)}
+                      >
+                        <p className="math-option-number">{el.number}</p>
+                        <p className="math-option-title">{el.title}</p>
+                        <p className="math-option-description">
+                          {el.description}
+                        </p>
+                      </div>
+                    )
+                )
+              )}
             </div>
           )}
         </div>
@@ -127,22 +133,24 @@ const Math = ({ math, isActiveId }) => {
           </div>
           {multiplications && (
             <div className="math-main-option">
-              <div className="math-main-option">
-                {math.multiplications.options.map((el) =>
-                  el.filterItems.map(
-                    (item) =>
-                      item === isActiveId && (
-                        <div className="math-option" key={el._id}>
-                          <p className="math-option-number">{el.number}</p>
-                          <p className="math-option-title">{el.title}</p>
-                          <p className="math-option-description">
-                            {el.description}
-                          </p>
-                        </div>
-                      )
-                  )
-                )}
-              </div>
+              {math.multiplications.options.map((el) =>
+                el.filterItems.map(
+                  (item) =>
+                    item === isActiveId && (
+                      <div
+                        className="math-option"
+                        key={el._id}
+                        onClick={() => modalHandler(el)}
+                      >
+                        <p className="math-option-number">{el.number}</p>
+                        <p className="math-option-title">{el.title}</p>
+                        <p className="math-option-description">
+                          {el.description}
+                        </p>
+                      </div>
+                    )
+                )
+              )}
             </div>
           )}
         </div>

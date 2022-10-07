@@ -1,0 +1,30 @@
+{
+  "configuration": "horizontal",
+  "math": [
+    {
+      "_id": 1,
+      "oparations": "9-5",
+      "currectAnsware": "4"
+    },
+    {
+      "_id": 2,
+      "oparations": "5-3",
+      "currectAnsware": "2"
+    },
+    {
+      "_id": 3,
+      "oparations": "9-8",
+      "currectAnsware": "1"
+    },
+    {
+      "_id": 4,
+      "oparations": "7-1",
+      "currectAnsware": "6"
+    },
+    {
+      "_id": 5,
+      "oparations": "6-0",
+      "currectAnsware": "6"
+    }
+  ]
+}

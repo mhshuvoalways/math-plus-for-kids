@@ -1,16 +1,52 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
+@media only screen and (max-width: 1300px) {
+  .math-intro-human {
+    width: 300px;
+  }
+  .overview {
+    width: calc(100% - 300px);
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .container {
+    width: calc(100% - 200px);
+  }
+  .math-intro-left {
+    width: 100%;
+  }
+  .intro-right {
+    display: none;
+  }
+  .intro-flex-human {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .intro-flex-human-right {
+    display: block;
+  }
+  .math-intro-human {
+    width: 200px;
+  }
+  .count-start {
+    font-weight: 800;
+    font-size: 200px;
+  }
+  .overview {
+    width: calc(100% - 100px);
+  }
+}
 
 @media only screen and (max-width: 790px) {
-  .container {
-    width: calc(100% - 150px);
-  }
   .math-option {
     width: 100%;
+  }
+  .overview {
+    padding: 20px;
+  }
+  .overview-card {
+    padding: 30px 10px;
+    width: 110px;
   }
 }
 
@@ -51,6 +87,27 @@
     -ms-flex-pack: center;
     justify-content: center;
   }
+  .main-actual {
+    padding: 0px 20px;
+  }
+  .progress-bar {
+    width: 100%;
+  }
+  .actual-math-border {
+    width: 100%;
+  }
+  .actual-math-answare {
+    width: 100%;
+  }
+  .actual-math-next-btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .score-doit-btn {
+    padding: 8px 5px;
+    width: 100%;
+    margin: 20px auto;
+  }
   .footer-flex {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -60,5 +117,72 @@
   .footer-menu {
     gap: 20px;
     padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .math-intro {
+    padding: 20px;
+    gap: 10px;
+  }
+  .intro-right {
+    display: block;
+  }
+  .math-intro-example {
+    margin-top: 0px;
+  }
+  .intro-flex-human-right {
+    display: none;
+  }
+  .intro-example-flex {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .math-intro-btn {
+    width: 100%;
+    margin: auto;
+    cursor: pointer;
+    background: #3629b7;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 35px;
+    padding: 5px 25px;
+    margin-top: 10px;
+  }
+  .math-horizontal {
+    font-size: 80px;
+    gap: 5px;
+  }
+  .actual-math-answare__horizontal {
+    font-size: 80px;
+  }
+  .count {
+    padding: 5px;
+  }
+  .count-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5px;
+  }
+  .count-start {
+    font-weight: 700;
+    font-size: 80px;
+  }
+  .overview {
+    padding: 20px 10px;
+  }
+  .overview-card {
+    padding: 30px 10px;
+    width: 100%;
+  }
+  .short-overview-items {
+    justify-content: center;
+  }
+  .score-score {
+    width: 100%;
   }
 }

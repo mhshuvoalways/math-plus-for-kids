@@ -7,9 +7,10 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Baloo Chettan 2";
-  background: #f7f9fd;
   height: 100%;
   margin: 0;
+  background: #ffffff;
+  /* overflow-x: hidden; */
 }
 
 .container {
@@ -19,7 +20,32 @@ body {
 
 .wrapper {
   min-height: calc(100vh - 258px);
+  background: #f7f9fd;
+  padding-bottom: 111px;
 }
+
+/* Modal start */
+.modal {
+  background: #ffffff;
+  border: 1px solid #f2eeee;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border-radius: 20px;
+  margin-top: 57px;
+  margin-bottom: 57px;
+  position: relative;
+}
+.modal-cross {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px;
+}
+.modal-cross-icon {
+  cursor: pointer;
+}
+
+/* Modal end */
 
 /* Header start */
 .header {
@@ -285,6 +311,7 @@ body {
   padding: 10px 0px 10px 20px;
   margin-top: 15px;
   width: 215px;
+  cursor: pointer;
 }
 
 .math-option-number {
@@ -323,7 +350,338 @@ body {
   margin-top: 4px;
 }
 
+/* Math Intro start */
+.math-intro {
+  padding: 66px 90px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.math-intro-left {
+  width: 60%;
+}
+.math-intro-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 43px;
+  color: #494949;
+}
+.math-intro-des {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #8e8f8f;
+}
+.intro-flex-human {
+  margin-top: 36px;
+}
+.math-intro-example {
+  margin-top: 36px;
+}
+.math-intro-example-titile {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: #494949;
+  margin-bottom: 8px;
+}
+.math-intro-example-number {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 37px;
+  color: #8e8f8f;
+  width: 85px;
+}
+.math-intro-example-number-wrong {
+  color: #ff3636;
+}
+.math-intro-example-example {
+  display: flex;
+  align-items: center;
+}
+.math-intro-example-input {
+  border: 1px solid #f7f9fd;
+  width: 42px;
+  height: 30px;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+.intro-right {
+  width: 40%;
+}
+.intro-flex-human-right {
+  display: none;
+}
+.math-intro-btn {
+  width: 336px;
+  margin: auto;
+  cursor: pointer;
+  background: #3629b7;
+  border-radius: 15px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 35px;
+  padding: 13px 55px;
+  margin-top: 110px;
+}
+/* Math Intro end */
+
+/* Countdown start */
+.math-intro-title__center {
+  text-align: center;
+}
+.count {
+  padding: 50px;
+}
+.count-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 116px 200px 116px 200px;
+}
+.count-start {
+  font-weight: 900;
+  font-size: 250px;
+  line-height: 360px;
+  color: #3629b7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Countdown end */
+
 /* Math end */
+
+/* Actual Math start*/
+.progress-bar {
+  border: 2px solid #000;
+  border-radius: 2px;
+  width: 381px;
+  height: 46px;
+  background: #ffffff;
+  margin: 27px auto;
+  position: relative;
+}
+.progress-bar-percent {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24px;
+  z-index: 10;
+}
+.progress-bar-percent-bg {
+  position: absolute;
+  background: linear-gradient(to right, #efefef, #1b26bb);
+  top: 0;
+  left: 0;
+  height: 46px;
+}
+.math-horizontal {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 120px;
+}
+.math-vertical {
+  font-size: 120px;
+}
+.actual-math {
+  font-weight: 700;
+  text-align: center;
+  color: #494949;
+  padding-top: 20px;
+}
+.actual-math-border {
+  border: 5px solid #000000;
+  width: 280px;
+  margin: 10px auto;
+}
+.actual-math-number-end {
+  padding-right: 65px;
+}
+.actual-math-answare {
+  background: #f7f9fd;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  width: 279.85px;
+  height: 116px;
+  border: 2px solid #efefef;
+  color: #3629b7;
+  font-weight: 700;
+  font-size: 120px;
+  text-align: center;
+  margin: 20px 0px;
+}
+.actual-math-answare:focus {
+  outline: 0;
+}
+.actual-math-next-btn {
+  width: 446px;
+  padding: 13px 0;
+  background: #3629b7;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  color: #ffffff;
+  margin: 92px auto 66px auto;
+  cursor: pointer;
+}
+/* Actual Math end*/
+
+/* Score start */
+.overview {
+  width: calc(100% - 400px);
+  margin: auto;
+  position: relative;
+}
+.score-score {
+  color: #ffffff;
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 181px;
+  height: 181px;
+  text-align: center;
+}
+.score-score-number {
+  font-weight: 700;
+  font-size: 50px;
+  padding-top: 50px;
+}
+.score-score-text {
+  font-weight: 600;
+  font-size: 18px;
+}
+.score-score-msg {
+  text-align: center;
+  margin-top: 20px;
+}
+.score-score-gb {
+  font-weight: 900;
+  font-size: 30px;
+  color: #494949;
+}
+.score-score-des {
+  font-weight: 700;
+  font-size: 18px;
+  color: #8e8f8f;
+  margin-top: 10px;
+}
+.overview-score {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.overview-card {
+  border: 1px solid #f2eeee;
+  -webkit-box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border-radius: 15px;
+  padding: 30px 10px;
+  margin-top: 15px;
+  width: 150px;
+  text-align: center;
+}
+.score-completion-number {
+  font-weight: 800;
+  font-size: 20px;
+  color: #bf65df;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+}
+.score__total-number {
+  color: #026cdc;
+}
+.score-total-number-point {
+  width: 5px;
+  height: 5px;
+  background: #026cdc;
+  border-radius: 100%;
+}
+.score__total-correct {
+  color: #55a55e;
+}
+.score-total-number-point__correct {
+  background: #55a55e;
+}
+.score__total-wrong {
+  color: #f75842;
+}
+.score-total-number-point__wrong {
+  background: #f75842;
+}
+.score-completion-complete {
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 5px;
+  color: #494949;
+}
+.short-overview {
+  border: 1px solid #f2eeee;
+  -webkit-box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border-radius: 15px;
+  padding: 21px 32px;
+  margin-top: 28px;
+}
+.short-overview-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+.short-overview-items-check {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  font-size: 24px;
+  line-height: 35px;
+  color: #494949;
+}
+.short-overview-sec-dec {
+  font-size: 16px;
+  line-height: 23px;
+  color: #8e8f8f;
+}
+.short-overview-sec-dec__number {
+  color: #3629b7;
+}
+.score-doit-btn {
+  background: #3629b7;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+  color: #ffffff;
+  padding: 12px 5px;
+  text-align: center;
+  width: 335px;
+  cursor: pointer;
+  margin: 28px auto;
+}
+/* Score end */
 
 /* Footer start */
 footer {
@@ -331,7 +689,6 @@ footer {
   border-radius: 0px 0px 12px 12px;
   -webkit-box-shadow: 0px -5px 20px 0px rgb(28 31 46 / 10%);
   box-shadow: 0px -5px 20px 0px rgb(28 31 46 / 10%);
-  margin-top: 111px;
 }
 
 .footer-logo {
