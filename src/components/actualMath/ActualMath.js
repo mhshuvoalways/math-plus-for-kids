@@ -121,6 +121,7 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
             onKeyDown={onKeyDownHandler}
             value={inputValue}
             ref={verticalMobile}
+            autoFocus
           />
         </div>
       ) : (
@@ -150,6 +151,7 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
               onKeyDown={onKeyDownHandler}
               value={inputValue}
               ref={horizontalMobile}
+              autoFocus
             />
           </div>
         )
