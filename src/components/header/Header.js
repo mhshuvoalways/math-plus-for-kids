@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const Header = ({ header }) => {
+  const [displayNav, setDisplayNav] = useState(false);
   const [navShow, setNavShow] = useState(false);
 
   return (
@@ -12,12 +13,20 @@ const Header = ({ header }) => {
             {navShow ? (
               <i
                 className="fa-solid fa-xmark header-bar-icon"
-                onClick={() => setNavShow(false)}
+                onClick={() => {
+                  setNavShow(false);
+                  setTimeout(() => {
+                    setDisplayNav(false);
+                  }, 1000);
+                }}
               ></i>
             ) : (
               <i
                 className="fa-solid fa-bars header-bar-icon "
-                onClick={() => setNavShow(true)}
+                onClick={() => {
+                  setDisplayNav(true);
+                  setNavShow(true);
+                }}
               ></i>
             )}
             <img
@@ -35,21 +44,23 @@ const Header = ({ header }) => {
           </nav>
         </div>
       </div>
-      <nav className="nav-mobile">
-        {header.nav.map((el) => (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: navShow ? 1 : 0,
-              height: navShow ? "50px" : "0px",
-            }}
-          >
-            <p className="nav-mobile-item" key={el._id}>
-              {el.name}
-            </p>
-          </motion.div>
-        ))}
-      </nav>
+      {displayNav && (
+        <nav className="nav-mobile">
+          {header.nav.map((el) => (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: navShow ? 1 : 0,
+                height: navShow ? "50px" : "0px",
+              }}
+            >
+              <p className="nav-mobile-item" key={el._id}>
+                {el.name}
+              </p>
+            </motion.div>
+          ))}
+        </nav>
+      )}
     </div>
   );
 };

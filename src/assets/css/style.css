@@ -71,6 +71,9 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+.confetti{
+  overflow: hidden
+}
 /* Modal end */
 
 /* Header start */

@@ -1,13 +1,46 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-const ActualMath = ({ mathCountHandler, mathCount }) => {
+const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
   const [inputValue, setValue] = useState("");
   const [countSec, setCountSec] = useState(0);
 
   const mathIndex = mathCount.finalMath.math[mathCount.serialIndex];
 
-  const inputRef = useRef(null);
+  const verticalDesktop = useRef(null);
+  const verticalMobile = useRef(null);
+  const horizontalDesktop = useRef(null);
+  const horizontalMobile = useRef(null);
+
+  const focusHandler = () => {
+    if (verticalDesktop.current) {
+      verticalDesktop.current.focus();
+    }
+    if (verticalMobile.current) {
+      verticalMobile.current.focus();
+    }
+    if (horizontalDesktop.current) {
+      horizontalDesktop.current.focus();
+    }
+    if (horizontalMobile.current) {
+      horizontalMobile.current.focus();
+    }
+  };
+
+  useEffect(() => {
+    if (verticalDesktop.current) {
+      verticalDesktop.current.focus();
+    }
+    if (verticalMobile.current) {
+      verticalMobile.current.focus();
+    }
+    if (horizontalDesktop.current) {
+      horizontalDesktop.current.focus();
+    }
+    if (horizontalMobile.current) {
+      horizontalMobile.current.focus();
+    }
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,10 +50,6 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
       clearTimeout(timer);
     };
   }, [countSec]);
-
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
 
   const countSecHandler = () => {
     setCountSec(0);
@@ -32,7 +61,8 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
 
   const nextHandler = () => {
     var temp = Object.assign({}, mathIndex);
-    if (inputValue) {
+    const mathLength = mathCount.finalMath.math.length;
+    if (inputValue && mathLength > answare.length) {
       temp.second = countSec;
       temp.userAnsware = inputValue;
       if (temp.currectAnsware === inputValue) {
@@ -42,13 +72,15 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
       countSecHandler();
       setValue("");
     }
+    focusHandler();
   };
 
   const onKeyDownHandler = (event) => {
     var temp = Object.assign({}, mathIndex);
     if (event.key === "Enter") {
       event.preventDefault();
-      if (inputValue) {
+      const mathLength = mathCount.finalMath.math.length;
+      if (inputValue && mathLength > answare.length) {
         temp.second = countSec;
         temp.userAnsware = inputValue;
         if (temp.currectAnsware === inputValue) {
@@ -78,9 +110,9 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
             }}
             onKeyDown={onKeyDownHandler}
             value={inputValue}
-            ref={inputRef}
+            ref={verticalDesktop}
           />
-           <input
+          <input
             type="number"
             className="actual-math-answare actual-math-answare__mobile"
             onChange={(event) => {
@@ -88,7 +120,7 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
             }}
             onKeyDown={onKeyDownHandler}
             value={inputValue}
-            ref={inputRef}
+            ref={verticalMobile}
           />
         </div>
       ) : (
@@ -107,7 +139,7 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
               }}
               onKeyDown={onKeyDownHandler}
               value={inputValue}
-              ref={inputRef}
+              ref={horizontalDesktop}
             />
             <input
               type="number"
@@ -117,7 +149,7 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
               }}
               onKeyDown={onKeyDownHandler}
               value={inputValue}
-              ref={inputRef}
+              ref={horizontalMobile}
             />
           </div>
         )

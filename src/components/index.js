@@ -89,7 +89,9 @@ const Index = ({ data, math }) => {
         serialIndex: mathCount.serialIndex + 1,
       });
     } else {
-      setCount("mathdone");
+      setTimeout(() => {
+        setCount("mathdone");
+      }, 2000);
     }
     temp.push(ansObj);
     setAnswer(temp);
@@ -151,6 +153,7 @@ const Index = ({ data, math }) => {
                   modalObj={modal.modalObj}
                   mathCount={mathCount}
                   mathCountHandler={mathCountHandler}
+                  answare={answare}
                 />
               </motion.div>
             )}

@@ -1,14 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const ProgressBarCompo = ({ mathCount }) => {
-  const percent =
-    (100 / mathCount.finalMath.math.length) * (mathCount.serialIndex + 1);
+const ProgressBarCompo = ({ mathCount, answare }) => {
+  const percent = (100 / mathCount.finalMath.math.length) * answare.length;
   return (
     <div className="progress-bar">
-      <p className="progress-bar-percent">{`${mathCount.serialIndex + 1} of ${
-        mathCount.finalMath.math.length
-      }`}</p>
+      <p className="progress-bar-percent">{`${answare.length} of ${mathCount.finalMath.math.length}`}</p>
       <motion.div
         animate={{
           width: `${percent}%`,
