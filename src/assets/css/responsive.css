@@ -18,8 +18,12 @@
     display: none;
   }
   .intro-flex-human {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 20px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
   .intro-flex-human-right {
@@ -139,8 +143,11 @@
     display: none;
   }
   .intro-example-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 10px;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
   .math-intro-btn {
@@ -189,6 +196,8 @@
     width: 100%;
   }
   .short-overview-items {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 }

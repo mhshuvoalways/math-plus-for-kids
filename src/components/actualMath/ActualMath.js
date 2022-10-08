@@ -71,7 +71,7 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
           </p>
           <p className="actual-math-border"></p>
           <input
-            type="text"
+            type="number"
             className="actual-math-answare"
             onChange={(event) => {
               onChangeHanlder(event.target.value);

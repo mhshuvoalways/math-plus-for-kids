@@ -36,6 +36,9 @@ body {
 .modal {
   background: #ffffff;
   border: 1px solid #f2eeee;
+  -webkit-box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
   box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
     0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
     0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
@@ -54,7 +57,11 @@ body {
   opacity: 0.5;
 }
 .modal-cross {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 10px 12px;
 }
@@ -373,8 +380,13 @@ body {
 /* Math Intro start */
 .math-intro {
   padding: 66px 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .math-intro-left {
@@ -416,13 +428,18 @@ body {
   color: #ff3636;
 }
 .math-intro-example-example {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .math-intro-example-input {
   border: 1px solid #f7f9fd;
   width: 42px;
   height: 30px;
+  -webkit-box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
 }
@@ -465,8 +482,14 @@ body {
   font-size: 250px;
   line-height: 360px;
   color: #3629b7;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 /* Countdown end */
@@ -494,16 +517,31 @@ body {
 }
 .progress-bar-percent-bg {
   position: absolute;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#efefef),
+    to(#1b26bb)
+  );
+  background: -o-linear-gradient(left, #efefef, #1b26bb);
   background: linear-gradient(to right, #efefef, #1b26bb);
   top: 0;
   left: 0;
   height: 46px;
 }
 .math-horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-size: 10vw;
 }
@@ -526,6 +564,7 @@ body {
 }
 .actual-math-answare {
   background: #f7f9fd;
+  -webkit-box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
   width: 279.85px;
@@ -537,6 +576,13 @@ body {
   text-align: center;
   margin: 20px 0px;
 }
+
+.actual-math-answare input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .actual-math-answare:focus {
   outline: 0;
 }
@@ -594,10 +640,15 @@ body {
   margin-top: 10px;
 }
 .overview-score {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 
   margin-top: 20px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .overview-card {
@@ -618,9 +669,15 @@ body {
   font-weight: 800;
   font-size: 20px;
   color: #bf65df;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 6px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .score__total-number {
@@ -663,18 +720,31 @@ body {
   margin-top: 28px;
 }
 .short-overview-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 5px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-weight: 700;
   margin-bottom: 5px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .short-overview-items-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 14px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 24px;
   line-height: 35px;
