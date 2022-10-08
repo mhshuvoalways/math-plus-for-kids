@@ -71,9 +71,7 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
-.confetti{
-  overflow: hidden
-}
+
 /* Modal end */
 
 /* Header start */
@@ -549,13 +547,12 @@ body {
   font-size: 10vw;
 }
 .math-vertical {
-  font-size: 120px;
+  font-size: 100px;
 }
 .actual-math {
   font-weight: 700;
   text-align: center;
   color: #494949;
-  padding-top: 20px;
 }
 .actual-math-border {
   border: 5px solid #000000;
@@ -563,7 +560,7 @@ body {
   margin: 10px auto;
 }
 .actual-math-number-end {
-  padding-right: 65px;
+  padding-right: 55px;
 }
 .actual-math-answare {
   background: #f7f9fd;
@@ -575,7 +572,7 @@ body {
   border: 2px solid #efefef;
   color: #3629b7;
   font-weight: 700;
-  font-size: 120px;
+  font-size: 100px;
   text-align: center;
 }
 .actual-math-answare__desktop {
@@ -604,7 +601,7 @@ body {
   line-height: 35px;
   text-align: center;
   color: #ffffff;
-  margin: 92px auto 66px auto;
+  margin: 50px auto 66px auto;
   cursor: pointer;
 }
 /* Actual Math end*/
