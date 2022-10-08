@@ -24,6 +24,15 @@ body {
 }
 
 /* Modal start */
+.main-modal {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .modal {
   background: #ffffff;
   border: 1px solid #f2eeee;
@@ -31,9 +40,18 @@ body {
     0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
     0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
   border-radius: 20px;
-  margin-top: 57px;
-  margin-bottom: 57px;
   position: relative;
+  margin: 20px auto;
+  z-index: 50;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000000;
+  opacity: 0.5;
 }
 .modal-cross {
   display: flex;
@@ -43,7 +61,9 @@ body {
 .modal-cross-icon {
   cursor: pointer;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 /* Modal end */
 
 /* Header start */

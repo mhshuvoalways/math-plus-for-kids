@@ -108,69 +108,63 @@ const Index = ({ data, math }) => {
     <div>
       <div className="wrapper">
         <Header header={data.header} />
-        {modal.toggle ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <Modal modalHandler={modalHandler} count={count} answare={answare}>
-              {count === "init" && (
-                <MathIntro
-                  getStartedHandler={getStartedHandler}
+        <Filter
+          filter={data.filter}
+          filterData={filterData}
+          onChangeHanlder={onChangeHanlder}
+        />
+        <Math
+          math={data.math}
+          isActiveId={isActiveId}
+          modalHandler={modalHandler}
+        />
+      </div>
+      {modal.toggle && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
+          <Modal modalHandler={modalHandler} count={count} answare={answare}>
+            {count === "init" && (
+              <MathIntro
+                getStartedHandler={getStartedHandler}
+                modalObj={modal.modalObj}
+              />
+            )}
+            {count === "start" && (
+              <motion.div
+                initial={{ opacity: 0, x: 500 }}
+                animate={{ opacity: 1, x: 0 }}
+              >
+                <CountDown
+                  countFinishHandler={countFinishHandler}
                   modalObj={modal.modalObj}
                 />
-              )}
-              {count === "start" && (
-                <motion.div
-                  initial={{ opacity: 0, x: 500 }}
-                  animate={{ opacity: 1, x: 0 }}
-                >
-                  <CountDown
-                    countFinishHandler={countFinishHandler}
-                    modalObj={modal.modalObj}
-                  />
-                </motion.div>
-              )}
-              {count === "finish" && (
-                <motion.div
-                  initial={{ opacity: 0, x: 500 }}
-                  animate={{ opacity: 1, x: 0 }}
-                >
-                  <ActualMath
-                    modalObj={modal.modalObj}
-                    mathCount={mathCount}
-                    mathCountHandler={mathCountHandler}
-                  />
-                </motion.div>
-              )}
-              {count === "mathdone" && (
-                <motion.div
-                  initial={{ opacity: 0, x: 500 }}
-                  animate={{ opacity: 1, x: 0 }}
-                >
-                  <Score
-                    doitagainHandler={doitagainHandler}
-                    answare={answare}
-                  />
-                </motion.div>
-              )}
-            </Modal>
-          </motion.div>
-        ) : (
-          <div>
-            <Filter
-              filter={data.filter}
-              filterData={filterData}
-              onChangeHanlder={onChangeHanlder}
-            />
-            <Math
-              math={data.math}
-              isActiveId={isActiveId}
-              modalHandler={modalHandler}
-            />
-          </div>
-        )}
-      </div>
+              </motion.div>
+            )}
+            {count === "finish" && (
+              <motion.div
+                initial={{ opacity: 0, x: 500 }}
+                animate={{ opacity: 1, x: 0 }}
+              >
+                <ActualMath
+                  modalObj={modal.modalObj}
+                  mathCount={mathCount}
+                  mathCountHandler={mathCountHandler}
+                />
+              </motion.div>
+            )}
+            {count === "mathdone" && (
+              <motion.div
+                initial={{ opacity: 0, x: 500 }}
+                animate={{ opacity: 1, x: 0 }}
+              >
+                <Score doitagainHandler={doitagainHandler} answare={answare} />
+              </motion.div>
+            )}
+          </Modal>
+        </motion.div>
+      )}
       <Footer footer={data.footer} />
     </div>
   );

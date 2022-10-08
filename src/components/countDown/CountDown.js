@@ -3,16 +3,17 @@ import { motion } from "framer-motion";
 import Countbg from "../../assets/images/Countbg.svg";
 
 const Intro = ({ countFinishHandler, modalObj }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(5);
+
   useEffect(() => {
-    if (count < 5) {
+    if (count > 0) {
       const timer = setTimeout(() => {
-        setCount((prevState) => prevState + 1);
+        setCount((prevState) => prevState - 1);
       }, 1000);
       return () => {
         clearTimeout(timer);
       };
-    } else if (count === 5) {
+    } else if (count === 0) {
       const timer = setTimeout(() => {
         countFinishHandler();
       }, 1000);

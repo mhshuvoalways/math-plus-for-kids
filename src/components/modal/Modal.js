@@ -4,17 +4,20 @@ import CrossIcon from "../../assets/images/Cross.svg";
 
 const Modal = ({ modalHandler, children, answare, count }) => {
   return (
-    <div className="container modal">
-      <Confetti answare={answare} count={count} />
-      <div className="modal-cross">
-        <img
-          src={CrossIcon}
-          alt=""
-          className="modal-cross-icon"
-          onClick={modalHandler}
-        />
+    <div className="main-modal">
+      <div className="container modal">
+        <Confetti answare={answare} count={count} />
+        <div className="modal-cross">
+          <img
+            src={CrossIcon}
+            alt=""
+            className="modal-cross-icon"
+            onClick={modalHandler}
+          />
+        </div>
+        <div>{children}</div>
       </div>
-      <div>{children}</div>
+      <div className="modal-overlay"></div>
     </div>
   );
 };
