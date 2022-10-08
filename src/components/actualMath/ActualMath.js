@@ -71,8 +71,18 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
           </p>
           <p className="actual-math-border"></p>
           <input
+            type="text"
+            className="actual-math-answare actual-math-answare__desktop"
+            onChange={(event) => {
+              onChangeHanlder(event.target.value);
+            }}
+            onKeyDown={onKeyDownHandler}
+            value={inputValue}
+            ref={inputRef}
+          />
+           <input
             type="number"
-            className="actual-math-answare"
+            className="actual-math-answare actual-math-answare__mobile"
             onChange={(event) => {
               onChangeHanlder(event.target.value);
             }}
@@ -91,7 +101,17 @@ const ActualMath = ({ mathCountHandler, mathCount }) => {
             <p>=</p>
             <input
               type="text"
-              className="actual-math-answare actual-math-answare__horizontal"
+              className="actual-math-answare actual-math-answare__horizontal actual-math-answare-hori-desktop"
+              onChange={(event) => {
+                onChangeHanlder(event.target.value);
+              }}
+              onKeyDown={onKeyDownHandler}
+              value={inputValue}
+              ref={inputRef}
+            />
+            <input
+              type="number"
+              className="actual-math-answare actual-math-answare__horizontal actual-math-answare-hori-mobile"
               onChange={(event) => {
                 onChangeHanlder(event.target.value);
               }}

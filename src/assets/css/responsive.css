@@ -111,6 +111,12 @@
     width: 100%;
     margin-top: 20px;
   }
+  .actual-math-answare__desktop {
+    display: none;
+  }
+  .actual-math-answare__mobile {
+    display: block;
+  }
   .score-doit-btn {
     padding: 8px 5px;
     width: 100%;
@@ -172,6 +178,12 @@
   }
   .actual-math-answare__horizontal {
     font-size: 15vw;
+  }
+  .actual-math-answare-hori-desktop {
+    display: none;
+  }
+  .actual-math-answare-hori-mobile {
+    display: block;
   }
   .actual-math-number-end {
     padding-right: 30px;

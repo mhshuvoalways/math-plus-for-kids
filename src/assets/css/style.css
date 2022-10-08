@@ -574,15 +574,20 @@ body {
   font-weight: 700;
   font-size: 120px;
   text-align: center;
-  margin: 20px 0px;
 }
-
-.actual-math-answare input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
+.actual-math-answare__desktop {
+  display: block;
+  margin: 20px auto;
 }
-
+.actual-math-answare__mobile {
+  display: none;
+}
+.actual-math-answare-hori-desktop {
+  display: block;
+}
+.actual-math-answare-hori-mobile {
+  display: none;
+}
 .actual-math-answare:focus {
   outline: 0;
 }
