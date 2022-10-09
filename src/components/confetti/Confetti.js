@@ -19,13 +19,13 @@ const ConfettiCompo = ({ answare, count }) => {
           {scorePercent === 100 && (
             <Confetti
               numberOfPieces="500"
-              style={{ width: "100%", height: "70%" }}
+              style={{ width: "100%", height: "350px" }}
             />
           )}
-          {scorePercent >= 50 && (
+          {scorePercent <= 99 && scorePercent >= 50 && (
             <Confetti
               numberOfPieces="100"
-              style={{ width: "100%", height: "60%" }}
+              style={{ width: "100%", height: "350px" }}
             />
           )}
         </div>

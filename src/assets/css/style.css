@@ -502,12 +502,12 @@ body {
 
 /* Actual Math start*/
 .progress-bar {
-  border: 2px solid #000;
+  border: 1px solid #808080;
   border-radius: 2px;
-  width: 381px;
+  width: 90%;
   height: 46px;
   background: #ffffff;
-  margin: 27px auto;
+  margin: 20px auto;
   position: relative;
 }
 .progress-bar-percent {
