@@ -129,11 +129,13 @@
   }
   .score-doit-btn {
     padding: 8px 5px;
-    width: 100%;
+    width: 80%;
     margin: 20px auto;
   }
   .short-overview {
     padding: 0px;
+    border-radius: 0px;
+    box-shadow: none;
   }
   .short-overview-items {
     border: 1px solid #f2eeee;

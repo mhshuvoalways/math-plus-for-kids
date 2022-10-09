@@ -613,6 +613,7 @@ body {
   width: calc(100% - 400px);
   margin: auto;
   position: relative;
+  min-height: calc(100vh - 400px);
 }
 .score-score {
   color: #ffffff;
