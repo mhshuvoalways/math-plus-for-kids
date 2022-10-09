@@ -138,6 +138,7 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
               onChange={(event) => {
                 onChangeHanlder(event.target.value);
               }}
+              size='10'
               onKeyDown={onKeyDownHandler}
               value={inputValue}
               ref={horizontalDesktop}

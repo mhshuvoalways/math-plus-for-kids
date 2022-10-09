@@ -518,18 +518,11 @@ body {
   font-size: 20px;
   line-height: 24px;
   z-index: 10;
+  color: #ffffff;
 }
 .progress-bar-percent-bg {
   position: absolute;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#efefef),
-    to(#1b26bb)
-  );
-  background: -o-linear-gradient(left, #efefef, #1b26bb);
-  background: linear-gradient(to right, #efefef, #1b26bb);
+  background: #1b26bb;
   top: 0;
   left: 0;
   height: 46px;
@@ -548,11 +541,11 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-size: 10vw;
-  min-height: calc(100vh - 400px);
+  min-height: calc(100vh - 500px);
 }
 .math-vertical {
   /* font-size: 100px; */
-  min-height: calc(100vh - 400px);
+  min-height: calc(100vh - 500px);
   font-size: 6vw;
 }
 .actual-math {
@@ -573,8 +566,7 @@ body {
   -webkit-box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
-  width: 279.85px;
-  height: 116px;
+  width: 30%;
   border: 2px solid #efefef;
   color: #3629b7;
   font-weight: 700;
@@ -741,7 +733,6 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  gap: 5px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -758,12 +749,17 @@ body {
   -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 14px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   font-size: 24px;
   line-height: 35px;
   color: #494949;
+}
+.short-overview-items-check-right-ans {
+  font-weight: 700;
+  font-size: 16px;
+  color: #787878;
+}
+.short-overview-items-icon {
+  margin-top: 8px;
 }
 .short-overview-sec-dec {
   font-size: 16px;

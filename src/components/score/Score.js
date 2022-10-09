@@ -61,12 +61,21 @@ const Score = ({ doitagainHandler, answare }) => {
         {answare.map((answare) => (
           <div className="short-overview-items" key={answare._id}>
             <div className="short-overview-items-check">
-              <img
-                src={answare.isCurrect ? RightImg : WrongImg}
-                alt=""
-                className=""
-              />
-              <p>{`${answare.firstNumber} ${answare.oparation} ${answare.secondNumber} = ${answare.userAnsware}`}</p>
+              <div>
+                <img
+                  src={answare.isCurrect ? RightImg : WrongImg}
+                  alt=""
+                  className="short-overview-items-icon"
+                />
+              </div>
+              <div>
+                <p>{`${answare.firstNumber} ${answare.oparation} ${answare.secondNumber} = ${answare.userAnsware}`}</p>
+                {answare.isCurrect ? null : (
+                  <p className="short-overview-items-check-right-ans">
+                    Right answer: {answare.currectAnsware}
+                  </p>
+                )}
+              </div>
             </div>
             <p className="short-overview-sec-dec">
               Solved in{" "}

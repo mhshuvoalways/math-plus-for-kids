@@ -29,9 +29,6 @@
   .intro-flex-human-right {
     display: block;
   }
-  .actual-math-answare {
-    height: 80px;
-  }
   .actual-math-number-end {
     padding-right: 25px;
   }
@@ -57,6 +54,11 @@
   .overview-card {
     padding: 30px 10px;
     width: 110px;
+  }
+  .actual-math-answare {
+    width: 90%;
+    font-size: 10vw;
+    margin: auto;
   }
   .actual-math-next-btn {
     padding: 11px 0;
@@ -113,10 +115,6 @@
   .actual-math-border {
     width: 100%;
   }
-  .actual-math-answare {
-    width: 100%;
-    font-size: 10vw;
-  }
   .actual-math-next-btn {
     width: 100%;
     margin-top: 20px;
@@ -133,6 +131,16 @@
     padding: 8px 5px;
     width: 100%;
     margin: 20px auto;
+  }
+  .short-overview {
+    padding: 0px;
+  }
+  .short-overview-items {
+    border: 1px solid #f2eeee;
+    padding: 5px;
+  }
+  .short-overview-sec-dec {
+    margin-left: 30px;
   }
   .footer-flex {
     -webkit-box-pack: center;

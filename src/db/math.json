@@ -3,10 +3,10 @@
   "math": [
     {
       "_id": 1,
-      "firstNumber": "9",
-      "secondNumber": "5",
-      "oparation": "-",
-      "currectAnsware": "4"
+      "firstNumber": "123456",
+      "secondNumber": "98765",
+      "oparation": "+",
+      "currectAnsware": "222221"
     },
     {
       "_id": 2,
