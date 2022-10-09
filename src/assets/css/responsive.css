@@ -29,6 +29,12 @@
   .intro-flex-human-right {
     display: block;
   }
+  .actual-math-answare {
+    height: 80px;
+  }
+  .actual-math-number-end {
+    padding-right: 25px;
+  }
   .math-intro-human {
     width: 200px;
   }
@@ -51,6 +57,10 @@
   .overview-card {
     padding: 30px 10px;
     width: 110px;
+  }
+  .actual-math-next-btn {
+    padding: 11px 0;
+    font-size: 22px;
   }
 }
 
@@ -105,11 +115,13 @@
   }
   .actual-math-answare {
     width: 100%;
-    font-size: 20vw;
+    font-size: 10vw;
   }
   .actual-math-next-btn {
     width: 100%;
     margin-top: 20px;
+    padding: 10px 0;
+    font-size: 20px;
   }
   .actual-math-answare__desktop {
     display: none;
@@ -163,7 +175,7 @@
     margin-top: 10px;
   }
   .math-vertical {
-    font-size: 20vw;
+    font-size: 10vw;
   }
   .math-horizontal {
     gap: 5px;
@@ -178,7 +190,7 @@
     display: block;
   }
   .actual-math-number-end {
-    padding-right: 30px;
+    padding-right: 20px;
   }
   .count {
     padding: 5px;
