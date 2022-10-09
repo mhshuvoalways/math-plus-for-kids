@@ -548,11 +548,11 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-size: 10vw;
-  min-height: calc(100vh - 600px);
+  min-height: calc(100vh - 400px);
 }
 .math-vertical {
   /* font-size: 100px; */
-  min-height: calc(100vh - 600px);
+  min-height: calc(100vh - 400px);
   font-size: 6vw;
 }
 .actual-math {
