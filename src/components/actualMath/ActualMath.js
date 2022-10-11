@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
   const [inputValue, setValue] = useState("");
   const [countSec, setCountSec] = useState(0);
+  const [countSubSec, setCountSubSec] = useState(0);
+  const [miliSecond, setMiliSecond] = useState(0);
 
   const mathIndex = mathCount.finalMath.math[mathCount.serialIndex];
 
@@ -44,6 +46,18 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      const date = new Date();
+      const miliSecond = date.getMilliseconds();
+      setMiliSecond(miliSecond);
+      setCountSubSec((prevState) => prevState + 1);
+    });
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [countSubSec]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
       setCountSec((prevState) => prevState + 1);
     }, 1000);
     return () => {
@@ -63,7 +77,9 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
     var temp = Object.assign({}, mathIndex);
     const mathLength = mathCount.finalMath.math.length;
     if (inputValue && mathLength > answare.length) {
-      temp.second = countSec;
+      temp.second = `${countSec}.${miliSecond.toString().slice(0, 2)}`;
+      temp.miliSecond =
+        countSec * 1000 + Number(`${miliSecond.toString().slice(0, 2)}0`);
       temp.userAnsware = inputValue;
       if (temp.currectAnsware === inputValue) {
         temp.isCurrect = true;
@@ -81,7 +97,9 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
       event.preventDefault();
       const mathLength = mathCount.finalMath.math.length;
       if (inputValue && mathLength > answare.length) {
-        temp.second = countSec;
+        temp.second = `${countSec}.${miliSecond.toString().slice(0, 2)}`;
+        temp.miliSecond =
+          countSec * 1000 + Number(`${miliSecond.toString().slice(0, 2)}0`);
         temp.userAnsware = inputValue;
         if (temp.currectAnsware === inputValue) {
           temp.isCurrect = true;
@@ -138,7 +156,7 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
               onChange={(event) => {
                 onChangeHanlder(event.target.value);
               }}
-              size='10'
+              size="10"
               onKeyDown={onKeyDownHandler}
               value={inputValue}
               ref={horizontalDesktop}

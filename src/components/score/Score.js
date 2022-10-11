@@ -13,6 +13,11 @@ const Score = ({ doitagainHandler, answare }) => {
     }
   });
 
+  let miliSecond = 0;
+  answare.forEach((el) => {
+    miliSecond = miliSecond + el.miliSecond;
+  });
+
   return (
     <div>
       <div className="overview">
@@ -36,23 +41,26 @@ const Score = ({ doitagainHandler, answare }) => {
             </p>
             <p className="score-completion-complete">Completion</p>
           </div>
-          <div className="overview-card">
+          {/* <div className="overview-card">
             <div className="score-completion-number score__total-number">
-              <p className="score-total-number-point"></p>
               <p>{mathLength}</p>
             </div>
             <p className="score-completion-complete">Total Questions</p>
+          </div> */}
+          <div className="overview-card">
+            <div className="score-completion-number score__total-number">
+              <p>{(miliSecond/1000)}</p>
+            </div>
+            <p className="score-completion-complete">Time Spent</p>
           </div>
           <div className="overview-card">
             <div className="score-completion-number score__total-correct">
-              <p className="score-total-number-point score-total-number-point__correct"></p>
               <p>{score}</p>
             </div>
             <p className="score-completion-complete">Correct answers</p>
           </div>
           <div className="overview-card">
             <div className="score-completion-number score__total-wrong">
-              <p className="score-total-number-point score-total-number-point__wrong"></p>
               <p>{mathLength - score}</p>
             </div>
             <p className="score-completion-complete">Wrong answers</p>

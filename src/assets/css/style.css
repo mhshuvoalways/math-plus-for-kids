@@ -691,23 +691,11 @@ body {
 .score__total-number {
   color: #026cdc;
 }
-.score-total-number-point {
-  width: 5px;
-  height: 5px;
-  background: #026cdc;
-  border-radius: 100%;
-}
 .score__total-correct {
   color: #55a55e;
 }
-.score-total-number-point__correct {
-  background: #55a55e;
-}
 .score__total-wrong {
   color: #f75842;
-}
-.score-total-number-point__wrong {
-  background: #f75842;
 }
 .score-completion-complete {
   font-weight: 700;
