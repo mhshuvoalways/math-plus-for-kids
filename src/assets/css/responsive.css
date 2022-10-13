@@ -5,6 +5,14 @@
   .overview {
     width: calc(100% - 300px);
   }
+  .aboutus-readingbook {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .aboutus-readingbook-calculate {
+    flex-direction: column-reverse;
+  }
 }
 
 @media only screen and (max-width: 1050px) {
@@ -64,6 +72,29 @@
     padding: 11px 0;
     font-size: 22px;
   }
+  .howitworks-guide {
+    justify-content: center;
+    gap: 5px;
+  }
+  .howitworks-container {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .howitworks-guide-number {
+    margin-top: 0px;
+  }
+  .aboutus-readingbook-img-container {
+    width: 100%;
+    margin: auto;
+  }
+  .aboutus-readingbook-img {
+    width: 100%;
+  }
+  .contact-container {
+    margin: auto;
+    padding: 20px;
+    width: 60%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -92,7 +123,6 @@
     z-index: 100;
   }
   .nav-mobile-item {
-    cursor: pointer;
     padding: 10px 20px;
   }
   .nav-mobile-item:hover {
@@ -225,5 +255,25 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+  .howitworks {
+    padding: 20px;
+  }
+  .contact-container {
+    padding: 20px 5px;
+    width: 70%;
+  }
+  .contact-email {
+    padding: 14px 2px;
+  }
+  .contact-message {
+    padding: 14px 2px;
+  }
+  .contact-submit-btn {
+    width: 100%;
+    padding: 14px 2px;
+  }
+  .success-goto-home-btn{
+    width: 100%;
   }
 }

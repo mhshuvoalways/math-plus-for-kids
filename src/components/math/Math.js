@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { motion } from "framer-motion";
 import ArrowUp from "../../assets/images/ArrowUp.svg";
 import ArrowDown from "../../assets/images/ArrowDown.svg";
+import { Context } from "../../app/Context";
 
-const Math = ({ math, isActiveId, modalHandler }) => {
+const Math = () => {
   const [addition, setAddition] = useState(true);
   const [subtraction, setSubtraction] = useState(false);
   const [multiplications, setMultiplications] = useState(false);
+
+  const context = useContext(Context);
 
   return (
     <div>
@@ -14,7 +17,7 @@ const Math = ({ math, isActiveId, modalHandler }) => {
         <div className="math-content">
           <div className="math-top">
             <div className="math-flex">
-              <p className="math-title">{math.addition.title}</p>
+              <p className="math-title">{context.math.addition.title}</p>
               <div
                 className="math-content-expend"
                 onClick={() => setAddition(!addition)}
@@ -32,7 +35,9 @@ const Math = ({ math, isActiveId, modalHandler }) => {
                 )}
               </div>
             </div>
-            <p className="math-description">{math.addition.description}</p>
+            <p className="math-description">
+              {context.math.addition.description}
+            </p>
           </div>
           {addition && (
             <motion.div
@@ -40,14 +45,14 @@ const Math = ({ math, isActiveId, modalHandler }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, height: "100%" }}
             >
-              {math.addition.options.map((el) =>
+              {context.math.addition.options.map((el) =>
                 el.filterItems.map(
                   (item) =>
-                    item === isActiveId && (
+                    item === context.isActiveId && (
                       <div
                         className="math-option"
                         key={el._id}
-                        onClick={() => modalHandler(el)}
+                        onClick={() => context.modalHandler(el)}
                       >
                         <p className="math-option-number">{el.number}</p>
                         <p className="math-option-title">{el.title}</p>
@@ -66,7 +71,7 @@ const Math = ({ math, isActiveId, modalHandler }) => {
         <div className="math-content">
           <div className="math-top">
             <div className="math-flex">
-              <p className="math-title">{math.subtraction.title}</p>
+              <p className="math-title">{context.math.subtraction.title}</p>
               <div
                 className="math-content-expend"
                 onClick={() => setSubtraction(!subtraction)}
@@ -84,7 +89,9 @@ const Math = ({ math, isActiveId, modalHandler }) => {
                 )}
               </div>
             </div>
-            <p className="math-description">{math.subtraction.description}</p>
+            <p className="math-description">
+              {context.math.subtraction.description}
+            </p>
           </div>
           {subtraction && (
             <motion.div
@@ -92,14 +99,14 @@ const Math = ({ math, isActiveId, modalHandler }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, height: "100%" }}
             >
-              {math.subtraction.options.map((el) =>
+              {context.math.subtraction.options.map((el) =>
                 el.filterItems.map(
                   (item) =>
-                    item === isActiveId && (
+                    item === context.isActiveId && (
                       <div
                         className="math-option"
                         key={el._id}
-                        onClick={() => modalHandler(el)}
+                        onClick={() => context.modalHandler(el)}
                       >
                         <p className="math-option-number">{el.number}</p>
                         <p className="math-option-title">{el.title}</p>
@@ -118,7 +125,7 @@ const Math = ({ math, isActiveId, modalHandler }) => {
         <div className="math-content">
           <div className="math-top">
             <div className="math-flex">
-              <p className="math-title">{math.multiplications.title}</p>
+              <p className="math-title">{context.math.multiplications.title}</p>
               <div
                 className="math-content-expend"
                 onClick={() => setMultiplications(!multiplications)}
@@ -137,7 +144,7 @@ const Math = ({ math, isActiveId, modalHandler }) => {
               </div>
             </div>
             <p className="math-description">
-              {math.multiplications.description}
+              {context.math.multiplications.description}
             </p>
           </div>
           {multiplications && (
@@ -146,14 +153,14 @@ const Math = ({ math, isActiveId, modalHandler }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, height: "100%" }}
             >
-              {math.multiplications.options.map((el) =>
+              {context.math.multiplications.options.map((el) =>
                 el.filterItems.map(
                   (item) =>
-                    item === isActiveId && (
+                    item === context.isActiveId && (
                       <div
                         className="math-option"
                         key={el._id}
-                        onClick={() => modalHandler(el)}
+                        onClick={() => context.modalHandler(el)}
                       >
                         <p className="math-option-number">{el.number}</p>
                         <p className="math-option-title">{el.title}</p>

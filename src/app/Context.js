@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Header from "./header/Header";
-import Filter from "./filter/Filter";
-import Math from "./math/Math";
-import MathIntro from "./math/Intro";
-import Footer from "./footer/Footer";
-import Modal from "./modal/Modal";
-import CountDown from "./countDown/CountDown";
-import ActualMath from "./actualMath";
-import Score from "./score/Score";
+import React, { useState, useEffect, createContext } from "react";
+import data from "../db/content.json";
+import math from "../db/math.json";
 
-const Index = ({ data, math }) => {
+export const Context = createContext();
+
+const Index = ({ children }) => {
   const [filterData, setFilterData] = useState([]);
   const [isActiveId, setIsActiveId] = useState();
   const [modal, setModal] = useState({
@@ -58,7 +52,7 @@ const Index = ({ data, math }) => {
       setIsActiveId(findTrue._id);
     }
     setFilterData(temp);
-  }, [data.filter.items, filterData]);
+  }, []);
 
   const modalHandler = (obj) => {
     setModal({
@@ -107,69 +101,26 @@ const Index = ({ data, math }) => {
   };
 
   return (
-    <div>
-      <div className="wrapper">
-        <Header header={data.header} />
-        <Filter
-          filter={data.filter}
-          filterData={filterData}
-          onChangeHanlder={onChangeHanlder}
-        />
-        <Math
-          math={data.math}
-          isActiveId={isActiveId}
-          modalHandler={modalHandler}
-        />
-      </div>
-      {modal.toggle && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-        >
-          <Modal modalHandler={modalHandler} count={count} answare={answare}>
-            {count === "init" && (
-              <MathIntro
-                getStartedHandler={getStartedHandler}
-                modalObj={modal.modalObj}
-              />
-            )}
-            {count === "start" && (
-              <motion.div
-                initial={{ opacity: 0, x: 500 }}
-                animate={{ opacity: 1, x: 0 }}
-              >
-                <CountDown
-                  countFinishHandler={countFinishHandler}
-                  modalObj={modal.modalObj}
-                />
-              </motion.div>
-            )}
-            {count === "finish" && (
-              <motion.div
-                initial={{ opacity: 0, x: 500 }}
-                animate={{ opacity: 1, x: 0 }}
-              >
-                <ActualMath
-                  modalObj={modal.modalObj}
-                  mathCount={mathCount}
-                  mathCountHandler={mathCountHandler}
-                  answare={answare}
-                />
-              </motion.div>
-            )}
-            {count === "mathdone" && (
-              <motion.div
-                initial={{ opacity: 0, x: 500 }}
-                animate={{ opacity: 1, x: 0 }}
-              >
-                <Score doitagainHandler={doitagainHandler} answare={answare} />
-              </motion.div>
-            )}
-          </Modal>
-        </motion.div>
-      )}
-      <Footer footer={data.footer} />
-    </div>
+    <Context.Provider
+      value={{
+        data: data,
+        math: data.math,
+        filterData: filterData,
+        isActiveId: isActiveId,
+        modal: modal,
+        count: count,
+        mathCount: mathCount,
+        answare: answare,
+        onChangeHanlder: onChangeHanlder,
+        modalHandler: modalHandler,
+        getStartedHandler: getStartedHandler,
+        countFinishHandler: countFinishHandler,
+        mathCountHandler: mathCountHandler,
+        doitagainHandler: doitagainHandler,
+      }}
+    >
+      {children}
+    </Context.Provider>
   );
 };
 

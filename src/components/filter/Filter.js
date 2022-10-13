@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Grade1st from "../../assets/images/Grade1st.svg";
 import Grade1st2 from "../../assets/images/Grade1st-2.svg";
+import { Context } from "../../app/Context";
 
-const Filter = ({ filter, onChangeHanlder, filterData }) => {
+const Filter = () => {
+  const context = useContext(Context);
+
   return (
     <div className="container">
-      <p className="filter-title">{filter.title}</p>
+      <p className="filter-title">{context.data.filter.title}</p>
       <div className="filter-flex">
-        {filterData.map((el) => (
+        {context.filterData.map((el) => (
           <div key={el._id}>
             {el.isActive === "disable" ? (
               <div
                 className="filter-items filter-items__disable"
-                onClick={() => onChangeHanlder(el._id)}
+                onClick={() => context.onChangeHanlder(el._id)}
               >
                 <div className="filter-year-counter filter-year-counter__disabled">
                   <p className="filter-year-number">{el.year}</p>
@@ -25,7 +28,7 @@ const Filter = ({ filter, onChangeHanlder, filterData }) => {
             ) : el.isActive ? (
               <div
                 className="filter-items filter-items__1st-grade"
-                onClick={() => onChangeHanlder(el._id)}
+                onClick={() => context.onChangeHanlder(el._id)}
               >
                 <div className="filter-year-counter">
                   <p className="filter-year-number">{el.year}</p>
@@ -44,7 +47,7 @@ const Filter = ({ filter, onChangeHanlder, filterData }) => {
             ) : (
               <div
                 className="filter-items filter-items__normal"
-                onClick={() => onChangeHanlder(el._id)}
+                onClick={() => context.onChangeHanlder(el._id)}
               >
                 <div className="filter-year-counter">
                   <p className="filter-year-number">{el.year}</p>

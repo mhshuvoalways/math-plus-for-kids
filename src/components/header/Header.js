@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Context } from "../../app/Context";
 
-const Header = ({ header }) => {
+const Header = () => {
   const [displayNav, setDisplayNav] = useState(false);
   const [navShow, setNavShow] = useState(false);
+
+  const context = useContext(Context);
+  const header = context.data.header;
+  const params = window.location.pathname;
 
   return (
     <div className="header">
@@ -29,17 +35,23 @@ const Header = ({ header }) => {
                 }}
               ></i>
             )}
-            <img
-              src={header.logo.image}
-              alt="Logo"
-              className="header-logo-image"
-            />
+            <Link to={header.logo.url}>
+              <img src={header.logo.image} alt="Logo" />
+            </Link>
           </div>
           <nav className="nav-desktop">
             {header.nav.map((el) => (
-              <p className="nav-desktop-item" key={el._id}>
+              <Link
+                to={el.url}
+                className={
+                  params === el.url
+                    ? "nav-desktop-item-active"
+                    : "nav-desktop-item"
+                }
+                key={el._id}
+              >
                 {el.name}
-              </p>
+              </Link>
             ))}
           </nav>
         </div>
@@ -54,9 +66,17 @@ const Header = ({ header }) => {
                 height: navShow ? "50px" : "0px",
               }}
             >
-              <p className="nav-mobile-item" key={el._id}>
+               <Link
+                to={el.url}
+                className={
+                  params === el.url
+                    ? "nav-desktop-item-active nav-mobile-item"
+                    : "nav-desktop-item nav-mobile-item"
+                }
+                key={el._id}
+              >
                 {el.name}
-              </p>
+              </Link>
             </motion.div>
           ))}
         </nav>
