@@ -1,5 +1,5 @@
 import React from "react";
-import ContactImg from "../../assets/images/Contact.svg";
+import ContactImg from "../../assets/images/Contact.png";
 
 const ContactUs = ({ submitHandler }) => {
   return (
@@ -8,6 +8,7 @@ const ContactUs = ({ submitHandler }) => {
         className="contact"
         style={{ backgroundImage: `url(${ContactImg})` }}
       >
+        <p className="contact-overlay"></p>
         <div className="contact-container">
           <div>
             <p className="contact-title">We’d love to hear from you</p>
@@ -15,16 +16,12 @@ const ContactUs = ({ submitHandler }) => {
               Any feedback, questions or suggestions? Please send me a message!
             </p>
             <form className="contact-form">
-              <div>
-                <p className="contact-label">Email Address</p>
-                <input
-                  type="email"
-                  placeholder="Email address"
-                  className="contact-email"
-                />
-              </div>
               <input
-                type="text"
+                type="email"
+                placeholder="Email address"
+                className="contact-email"
+              />
+              <textarea
                 placeholder="Your message"
                 className="contact-message"
               />

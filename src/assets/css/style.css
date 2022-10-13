@@ -849,6 +849,9 @@ body {
 /* How it works end */
 
 /* About us start */
+.howitworks-about-img-container {
+  width: 40%;
+}
 .howitworks-about {
   margin-top: 48px;
 }
@@ -883,30 +886,44 @@ body {
   margin-top: 38px;
   height: 776px;
   background-repeat: no-repeat;
-  background-position: center left;
+  background-position: center;
+  background-size: cover;
   overflow-x: hidden;
+  position: relative;
+}
+.contact-overlay {
+  background: #000000;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .contact-container {
   width: 427px;
-  padding: 50px 50px 0 540px;
+  margin: auto;
+  padding-top: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 .contact-title {
   font-weight: 900;
   font-size: 30px;
   line-height: 43px;
-  color: #494949;
+  color: #f4f4f4;
 }
 .contact-description {
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
-  color: #8e8f8f;
+  color: #f4f4f4;
 }
-.contact-label {
-  font-weight: 900;
-  font-size: 16px;
-  line-height: 23px;
-  color: #3629b7;
+.contact-form {
+  margin-top: 15px;
 }
 .contact-email {
   background: #f4f4f4;
@@ -916,12 +933,14 @@ body {
   border: none;
   border-bottom: 3px solid #3629b7;
   margin-top: 8px;
+  letter-spacing: 2px;
 }
 .contact-email::placeholder {
   color: #c0c0c0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 900;
+  letter-spacing: 1.7px;
 }
 .contact-email:focus {
   outline: 0;
@@ -935,10 +954,12 @@ body {
   margin-top: 24px;
   border: none;
   border-bottom: 3px solid #3629b7;
+  letter-spacing: 1px;
 }
 .contact-message::placeholder {
   color: #c0c0c0;
-  font-size: 14px;
+  letter-spacing: 1px;
+  font-size: 17px;
   line-height: 20px;
   font-weight: 900;
 }

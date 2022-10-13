@@ -8,7 +8,13 @@ const AboutUs = () => {
     <div className="container">
       <div className="aboutus howitworks">
         <p className="howitworks-title">About</p>
-        <img src={TeachingStudests} alt="TeachingStudests" className="howitworks-about"/>
+        <div className="howitworks-about-img-container">
+          <img
+            src={TeachingStudests}
+            alt="TeachingStudests"
+            className="howitworks-about"
+          />
+        </div>
         <p className="aboutus-first-description">
           If you are here, chances are high you are concerned parent looking to
           help improve your child’s math skills. <br />
