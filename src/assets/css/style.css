@@ -784,6 +784,7 @@ body {
     0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
   border-radius: 20px;
   margin-top: 38px;
+  overflow-x: hidden;
 }
 .howitworks-title {
   font-weight: 700;
@@ -804,11 +805,11 @@ body {
 .howitworks-guide {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px;
 }
 .howitworks-container {
-  width: 200px;
-  margin-top: 50px;
+  width: 25%;
 }
 .howitworks-guide-number {
   background: #3629b7;
@@ -883,11 +884,11 @@ body {
   height: 776px;
   background-repeat: no-repeat;
   background-position: center left;
+  overflow-x: hidden;
 }
 .contact-container {
-  margin-left: auto;
-  padding: 50px 90px 0 0;
   width: 427px;
+  padding: 50px 50px 0 540px;
 }
 .contact-title {
   font-weight: 900;
@@ -900,9 +901,6 @@ body {
   font-size: 18px;
   line-height: 26px;
   color: #8e8f8f;
-}
-.contact-form {
-  margin-top: 20px;
 }
 .contact-label {
   font-weight: 900;
@@ -921,9 +919,9 @@ body {
 }
 .contact-email::placeholder {
   color: #c0c0c0;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
+  font-weight: 900;
 }
 .contact-email:focus {
   outline: 0;

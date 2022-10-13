@@ -13,6 +13,10 @@
   .aboutus-readingbook-calculate {
     flex-direction: column-reverse;
   }
+  .contact-container {
+    padding: 50px;
+    margin: auto;
+  }
 }
 
 @media only screen and (max-width: 1050px) {
@@ -74,11 +78,10 @@
   }
   .howitworks-guide {
     justify-content: center;
-    gap: 5px;
+    flex-wrap: wrap;
   }
   .howitworks-container {
     width: 100%;
-    margin-top: 30px;
   }
   .howitworks-guide-number {
     margin-top: 0px;
@@ -91,9 +94,9 @@
     width: 100%;
   }
   .contact-container {
-    margin: auto;
-    padding: 20px;
-    width: 60%;
+    display: flex;
+    align-items: center;
+    width: 70%;
   }
 }
 
@@ -273,7 +276,7 @@
     width: 100%;
     padding: 14px 2px;
   }
-  .success-goto-home-btn{
+  .success-goto-home-btn {
     width: 100%;
   }
 }

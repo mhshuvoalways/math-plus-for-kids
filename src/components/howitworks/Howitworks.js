@@ -29,17 +29,6 @@ const Howitworks = () => {
             <p className="howitworks-guide-number">1</p>
             <p className="howitworks-guide-title">Select a Category</p>
             <p className="howitworks-guide-long-description">
-              In each grade category, you will find separate math drills with
-              equations on addition, subtraction, multiplication, and addition,
-              allowing you to decide which math operation you wish your child to
-              practice.
-            </p>
-          </div>
-          <div className="howitworks-container">
-            <img src={GuideHuman2} alt="" />
-            <p className="howitworks-guide-number">2</p>
-            <p className="howitworks-guide-title">Select a Category</p>
-            <p className="howitworks-guide-long-description">
               We place all our math drills into different categories based on
               grade and age. Thus, if your child is in grade 1, select the grade
               1 category, and the relevant math drills will appear on the page.
@@ -48,9 +37,20 @@ const Howitworks = () => {
             </p>
           </div>
           <div className="howitworks-container">
+            <img src={GuideHuman2} alt="" />
+            <p className="howitworks-guide-number">2</p>
+            <p className="howitworks-guide-title">Pick a Math Drill</p>
+            <p className="howitworks-guide-long-description">
+              In each grade category, you will find separate math drills with
+              equations on addition, subtraction, multiplication, and addition,
+              allowing you to decide which math operation you wish your child to
+              practice.
+            </p>
+          </div>
+          <div className="howitworks-container">
             <img src={GuideHuman3} alt="" />
             <p className="howitworks-guide-number">3</p>
-            <p className="howitworks-guide-title">Select a Category</p>
+            <p className="howitworks-guide-title">Solve the Equations</p>
             <p className="howitworks-guide-long-description">
               Once you select which math operations you want to practice, your
               kid can start their math drill. While we do not time our math
@@ -65,7 +65,7 @@ const Howitworks = () => {
           <div className="howitworks-container">
             <img src={GuideHuman4} alt="" />
             <p className="howitworks-guide-number">4</p>
-            <p className="howitworks-guide-title">Select a Category</p>
+            <p className="howitworks-guide-title">Read your Summary</p>
             <p className="howitworks-guide-long-description">
               Once your kid has answered all the questions, our tool will
               automatically analyze your kid’s work and provide a detailed
