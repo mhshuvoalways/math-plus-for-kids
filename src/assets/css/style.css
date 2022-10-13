@@ -937,10 +937,10 @@ body {
 }
 .contact-email::placeholder {
   color: #c0c0c0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
-  font-weight: 900;
-  letter-spacing: 1.7px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
 }
 .contact-email:focus {
   outline: 0;
