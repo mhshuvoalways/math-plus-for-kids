@@ -929,12 +929,14 @@ body {
   border-bottom: 3px solid #3629b7;
   margin-top: 8px;
   letter-spacing: 2px;
+  font-family: "Baloo Chettan 2";
 }
 .contact-email::placeholder {
   color: #c0c0c0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
+  font-family: "Baloo Chettan 2";
 }
 .contact-email:focus {
   outline: 0;
@@ -949,20 +951,19 @@ body {
   margin-top: 8px;
   letter-spacing: 2px;
   height: 102px;
+  font-family: "Baloo Chettan 2";
 }
 .contact-message::placeholder {
   color: #c0c0c0;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
   font-weight: 700;
+  font-family: "Baloo Chettan 2";
 }
 .contact-message:focus {
   outline: 0;
 }
-textarea,
-input[type="text"] {
-  font-family: "Baloo Chettan 2";
-}
+
 .contact-submit-btn {
   width: 141px;
   background: #3629b7;
