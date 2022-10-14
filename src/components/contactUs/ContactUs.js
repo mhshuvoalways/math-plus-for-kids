@@ -20,10 +20,13 @@ const ContactUs = ({ submitHandler }) => {
                 type="email"
                 placeholder="Email address"
                 className="contact-email"
+                required
               />
-              <textarea
+               <input
+                type="text"
                 placeholder="Your message"
                 className="contact-message"
+                required
               />
               <p className="contact-submit-btn" onClick={submitHandler}>
                 Submit
