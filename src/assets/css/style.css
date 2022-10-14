@@ -932,10 +932,9 @@ body {
 }
 .contact-email::placeholder {
   color: #c0c0c0;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   font-weight: 700;
-  letter-spacing: 1.2px;
 }
 .contact-email:focus {
   outline: 0;
@@ -944,22 +943,25 @@ body {
   background: #f4f4f4;
   border-radius: 5px 5px 0px 0px;
   width: 100%;
-  height: 50px;
-  padding: 24px 13px;
+  padding: 14px 13px;
   border: none;
   border-bottom: 3px solid #3629b7;
   margin-top: 8px;
   letter-spacing: 2px;
+  height: 102px;
 }
 .contact-message::placeholder {
   color: #c0c0c0;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 20px;
   font-weight: 700;
-  letter-spacing: 1.2px;
 }
 .contact-message:focus {
   outline: 0;
+}
+textarea,
+input[type="text"] {
+  font-family: "Baloo Chettan 2";
 }
 .contact-submit-btn {
   width: 141px;

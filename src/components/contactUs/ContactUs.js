@@ -22,8 +22,7 @@ const ContactUs = ({ submitHandler }) => {
                 className="contact-email"
                 required
               />
-               <input
-                type="text"
+              <textarea
                 placeholder="Your message"
                 className="contact-message"
                 required
