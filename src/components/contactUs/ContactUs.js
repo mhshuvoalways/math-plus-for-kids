@@ -1,5 +1,5 @@
 import React from "react";
-import ContactImg from "../../assets/images/Contact.png";
+import ContactImg from "../../assets/images/Contact.svg";
 
 const ContactUs = ({ submitHandler }) => {
   return (

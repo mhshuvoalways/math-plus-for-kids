@@ -849,30 +849,25 @@ body {
 /* How it works end */
 
 /* About us start */
-.howitworks-about-img-container {
-  width: 40%;
-}
-.howitworks-about {
-  margin-top: 48px;
-}
 .aboutus {
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
   color: #8e8f8f;
 }
-.aboutus-first-description {
-  margin-top: 34px;
+.aboutus-readingbook-first {
+  padding-top: 48px;
+}
+.aboutus-readingbook-img {
+  width: 400px;
 }
 .aboutus-readingbook {
   margin-top: 61px;
   display: flex;
-  gap: 5px;
+  gap: 20px;
   align-items: center;
 }
-.aboutus-readingbook-calculate {
-  gap: 20px;
-}
+
 /* About us end */
 
 /* Contact us start */

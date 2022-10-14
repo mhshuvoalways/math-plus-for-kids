@@ -50,9 +50,6 @@
   .overview {
     width: calc(100% - 100px);
   }
-  .howitworks-about-img-container {
-    width: 60%;
-  }
 }
 
 @media only screen and (max-width: 790px) {
@@ -270,9 +267,6 @@
     padding: 14px 2px;
   }
   .success-goto-home-btn {
-    width: 100%;
-  }
-  .howitworks-about-img-container {
     width: 100%;
   }
 }
