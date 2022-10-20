@@ -4,20 +4,7 @@ import ScoreImg from "../../assets/images/Score.svg";
 import RightImg from "../../assets/images/Right.svg";
 import WrongImg from "../../assets/images/Wrong.svg";
 
-const Score = ({ doitagainHandler, answare }) => {
-  let score = 0;
-  let mathLength = answare.length;
-  answare.forEach((el) => {
-    if (el.isCurrect) {
-      score++;
-    }
-  });
-
-  let miliSecond = 0;
-  answare.forEach((el) => {
-    miliSecond = miliSecond + el.miliSecond;
-  });
-
+const Score = ({ doitagainHandler, answare, overallScore }) => {
   return (
     <div>
       <div className="overview">
@@ -25,7 +12,7 @@ const Score = ({ doitagainHandler, answare }) => {
           className="score-score"
           style={{ backgroundImage: `url(${ScoreImg})` }}
         >
-          <p className="score-score-number">{score}</p>
+          <p className="score-score-number">{overallScore.exactScore}</p>
           <p className="score-score-text">Your score</p>
         </div>
         <div className="score-score-msg">
@@ -37,7 +24,7 @@ const Score = ({ doitagainHandler, answare }) => {
         <div className="overview-score">
           <div className="overview-card">
             <p className="score-completion-number">
-              {(100 / mathLength) * score}%
+              {overallScore.percentScore}%
             </p>
             <p className="score-completion-complete">Completion</p>
           </div>
@@ -49,19 +36,19 @@ const Score = ({ doitagainHandler, answare }) => {
           </div> */}
           <div className="overview-card">
             <div className="score-completion-number score__total-number">
-              <p>{(miliSecond/1000)}</p>
+              <p>{overallScore.timeSpent}</p>
             </div>
             <p className="score-completion-complete">Time Spent</p>
           </div>
           <div className="overview-card">
             <div className="score-completion-number score__total-correct">
-              <p>{score}</p>
+              <p>{overallScore.currectAnswer}</p>
             </div>
             <p className="score-completion-complete">Correct answers</p>
           </div>
           <div className="overview-card">
             <div className="score-completion-number score__total-wrong">
-              <p>{mathLength - score}</p>
+              <p>{overallScore.wrongAnswer}</p>
             </div>
             <p className="score-completion-complete">Wrong answers</p>
           </div>

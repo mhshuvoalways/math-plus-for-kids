@@ -60,6 +60,7 @@ const MathStart = () => {
                 <Score
                   doitagainHandler={context.doitagainHandler}
                   answare={context.answare}
+                  overallScore={context.overallScore}
                 />
               </motion.div>
             )}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, createContext } from "react";
 import data from "../db/content.json";
-import math from "../db/math.json";
+import Axios from "../utils/Axios";
+import { v4 as uuidv4 } from "uuid";
+import { detect } from "detect-browser";
 
 export const Context = createContext();
 
@@ -14,9 +16,42 @@ const Index = ({ children }) => {
   const [count, setCount] = useState("init");
   const [mathCount, setMathCount] = useState({
     serialIndex: 0,
-    finalMath: math,
+    finalMath: null,
   });
   const [answare, setAnswer] = useState([]);
+  const [examID, setExamID] = useState("");
+  const sessionLocal = localStorage.getItem("session");
+  const [overallScore, setOverallScore] = useState({
+    exactScore: 0,
+    percentScore: 0,
+    timeSpent: 0,
+    currectAnswer: 0,
+    wrongAnswer: 0,
+  });
+
+  const totalQuestions = process.env.REACT_APP_TOTAL_QUESTION;
+
+  useEffect(() => {
+    if (answare.length === mathCount.serialIndex + 1) {
+      let score = 0;
+      answare.forEach((el) => {
+        if (el.isCurrect) {
+          score++;
+        }
+      });
+      let miliSecond = 0;
+      answare.forEach((el) => {
+        miliSecond = miliSecond + el.miliSecond;
+      });
+      setOverallScore({
+        exactScore: score,
+        percentScore: (100 / answare.length) * score,
+        timeSpent: miliSecond / 1000,
+        currectAnswer: score,
+        wrongAnswer: answare.length - score,
+      });
+    }
+  }, [answare, mathCount.serialIndex]);
 
   const onChangeHanlder = (id) => {
     const temp = [...filterData];
@@ -60,15 +95,13 @@ const Index = ({ children }) => {
       modalObj: obj,
     });
     setCount("init");
-    setMathCount({
-      ...mathCount,
-      serialIndex: 0,
-    });
     setAnswer([]);
   };
 
   const getStartedHandler = () => {
     setCount("start");
+    questionGenerate();
+    examIDgenetator();
   };
 
   const countFinishHandler = () => {
@@ -87,18 +120,83 @@ const Index = ({ children }) => {
         setCount("mathdone");
       }, 2000);
     }
+    ansObj.sessionID = sessionLocal;
     temp.push(ansObj);
     setAnswer(temp);
+
+    Axios.put(`/api/exams/${examID}/question`, ansObj)
+      .then((response) => {
+        console.log(response.data.message);
+      })
+      .catch(() => {
+        console.log("Something went wrong!");
+      });
   };
 
   const doitagainHandler = () => {
     setCount("start");
-    setMathCount({
-      ...mathCount,
-      serialIndex: 0,
-    });
     setAnswer([]);
+    questionGenerate();
+    examIDgenetator();
   };
+
+  const examIDgenetator = () => {
+    const eId = uuidv4();
+    setExamID(eId);
+    Axios.post("/api/exams", { examID: eId, sessionID: sessionLocal })
+      .then((response) => {
+        console.log(response.data.message);
+      })
+      .catch(() => {
+        console.log("Something went wrong!");
+      });
+  };
+
+  const questionGenerate = () => {
+    const mathTemp = {
+      configuration: "horizontal",
+      math: [],
+    };
+    for (let i = 1; i <= totalQuestions; i++) {
+      const maxLimit = Math.round(Math.random() * 8 + 1);
+      const minLimit = Math.round(Math.random() * 9);
+      const addition = maxLimit + minLimit;
+      const mathObj = {
+        _id: i,
+        firstNumber: maxLimit,
+        secondNumber: minLimit,
+        currectAnsware: String(addition),
+        oparation: "+",
+      };
+      mathTemp.math.push(mathObj);
+    }
+    setMathCount({
+      serialIndex: 0,
+      finalMath: mathTemp,
+    });
+  };
+
+  useEffect(() => {
+    if (!sessionLocal) {
+      const sessionId = uuidv4();
+      localStorage.setItem("session", sessionId);
+      const browser = detect();
+      const sessionObj = {
+        sessionID: sessionId,
+        browserName: browser.name,
+        browserType: browser.type,
+        browserOS: browser.os,
+        browserVersion: browser.version,
+      };
+      Axios.post("/api/session", sessionObj)
+        .then((response) => {
+          console.log(response.data.message);
+        })
+        .catch(() => {
+          console.log("Something went wrong!");
+        });
+    }
+  }, [sessionLocal]);
 
   return (
     <Context.Provider
@@ -111,6 +209,7 @@ const Index = ({ children }) => {
         count: count,
         mathCount: mathCount,
         answare: answare,
+        overallScore: overallScore,
         onChangeHanlder: onChangeHanlder,
         modalHandler: modalHandler,
         getStartedHandler: getStartedHandler,

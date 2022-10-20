@@ -74,6 +74,18 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
   };
 
   const nextHandler = () => {
+    answerHandler();
+    focusHandler();
+  };
+
+  const onKeyDownHandler = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      answerHandler();
+    }
+  };
+
+  const answerHandler = () => {
     var temp = Object.assign({}, mathIndex);
     const mathLength = mathCount.finalMath.math.length;
     if (inputValue && mathLength > answare.length) {
@@ -87,27 +99,6 @@ const ActualMath = ({ mathCountHandler, mathCount, answare }) => {
       mathCountHandler(temp);
       countSecHandler();
       setValue("");
-    }
-    focusHandler();
-  };
-
-  const onKeyDownHandler = (event) => {
-    var temp = Object.assign({}, mathIndex);
-    if (event.key === "Enter") {
-      event.preventDefault();
-      const mathLength = mathCount.finalMath.math.length;
-      if (inputValue && mathLength > answare.length) {
-        temp.second = `${countSec}.${miliSecond.toString().slice(0, 2)}`;
-        temp.miliSecond =
-          countSec * 1000 + Number(`${miliSecond.toString().slice(0, 2)}0`);
-        temp.userAnsware = inputValue;
-        if (temp.currectAnsware === inputValue) {
-          temp.isCurrect = true;
-        }
-        mathCountHandler(temp);
-        countSecHandler();
-        setValue("");
-      }
     }
   };
 
