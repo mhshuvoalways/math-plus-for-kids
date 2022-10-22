@@ -12,6 +12,7 @@ const Index = ({ children }) => {
   const [modal, setModal] = useState({
     toggle: false,
     modalObj: null,
+    operation: "",
   });
   const [count, setCount] = useState("init");
   const [mathCount, setMathCount] = useState({
@@ -89,10 +90,11 @@ const Index = ({ children }) => {
     setFilterData(temp);
   }, []);
 
-  const modalHandler = (obj) => {
+  const modalHandler = (obj, operation) => {
     setModal({
       toggle: !modal.toggle,
       modalObj: obj,
+      operation: operation,
     });
     setCount("init");
     setAnswer([]);
@@ -100,7 +102,7 @@ const Index = ({ children }) => {
 
   const getStartedHandler = () => {
     setCount("start");
-    questionGenerate();
+    questionGenerator();
     examIDgenetator();
   };
 
@@ -136,7 +138,7 @@ const Index = ({ children }) => {
   const doitagainHandler = () => {
     setCount("start");
     setAnswer([]);
-    questionGenerate();
+    questionGenerator();
     examIDgenetator();
   };
 
@@ -152,21 +154,28 @@ const Index = ({ children }) => {
       });
   };
 
-  const questionGenerate = () => {
+  const questionGenerator = () => {
     const mathTemp = {
       configuration: "horizontal",
       math: [],
     };
     for (let i = 1; i <= totalQuestions; i++) {
-      const maxLimit = Math.round(Math.random() * 8 + 1);
-      const minLimit = Math.round(Math.random() * 9);
-      const addition = maxLimit + minLimit;
+      const firstDigit = Math.round(Math.random() * 8 + 1);
+      const secondDigit = Math.round(Math.random() * 9);
+      let temp = 0;
+      if (modal.operation === "+") {
+        temp = firstDigit + secondDigit;
+      } else if (modal.operation === "-") {
+        temp = firstDigit - secondDigit;
+      } else if (modal.operation === "*") {
+        temp = firstDigit * secondDigit;
+      }
       const mathObj = {
         _id: i,
-        firstNumber: maxLimit,
-        secondNumber: minLimit,
-        currectAnsware: String(addition),
-        oparation: "+",
+        firstNumber: firstDigit,
+        secondNumber: secondDigit,
+        currectAnsware: String(temp),
+        oparation: modal.operation,
       };
       mathTemp.math.push(mathObj);
     }

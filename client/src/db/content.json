@@ -170,7 +170,7 @@
           "description": "Lorem ipsum dolor sit amet",
           "filterItems": [4, 1],
           "modal": {
-            "title": "Subtract up to 10",
+            "title": "Subtract up to 20",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do eisit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do ei",
             "example": {
               "first": " 9 - 2",
@@ -185,7 +185,7 @@
           "description": "Lorem ipsum dolor sit amet",
           "filterItems": [3],
           "modal": {
-            "title": "Subtract up to 10",
+            "title": "Subtract up to 30",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do eisit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do ei",
             "example": {
               "first": " 9 - 2",
@@ -200,7 +200,7 @@
           "description": "Lorem ipsum dolor sit amet",
           "filterItems": [1, 4],
           "modal": {
-            "title": "Subtract up to 10",
+            "title": "Subtract up to 40",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do eisit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do ei",
             "example": {
               "first": " 9 - 2",
@@ -236,7 +236,7 @@
           "description": "Lorem ipsum dolor sit amet",
           "filterItems": [5, 4],
           "modal": {
-            "title": "Subtract up to 10",
+            "title": "Subtract up to 20",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do eisit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do ei",
             "example": {
               "first": " 9 - 2",
@@ -251,7 +251,7 @@
           "description": "Lorem ipsum dolor sit amet",
           "filterItems": [2, 3, 5, 1],
           "modal": {
-            "title": "Subtract up to 10",
+            "title": "Subtract up to 30",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do eisit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do ei",
             "example": {
               "first": " 9 - 2",
@@ -266,7 +266,7 @@
           "description": "Lorem ipsum dolor sit amet",
           "filterItems": [1, 2, 5],
           "modal": {
-            "title": "Subtract up to 10",
+            "title": "Subtract up to 40",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do eisit amet, consectetur adipiscing elit, sed do ei sit amet, consectetur adipiscing elit, sed do ei",
             "example": {
               "first": " 9 - 2",

@@ -52,7 +52,7 @@ const Math = () => {
                       <div
                         className="math-option"
                         key={el._id}
-                        onClick={() => context.modalHandler(el)}
+                        onClick={() => context.modalHandler(el, "+", "+")}
                       >
                         <p className="math-option-number">{el.number}</p>
                         <p className="math-option-title">{el.title}</p>
@@ -106,7 +106,7 @@ const Math = () => {
                       <div
                         className="math-option"
                         key={el._id}
-                        onClick={() => context.modalHandler(el)}
+                        onClick={() => context.modalHandler(el, "-")}
                       >
                         <p className="math-option-number">{el.number}</p>
                         <p className="math-option-title">{el.title}</p>
@@ -160,7 +160,7 @@ const Math = () => {
                       <div
                         className="math-option"
                         key={el._id}
-                        onClick={() => context.modalHandler(el)}
+                        onClick={() => context.modalHandler(el, "*")}
                       >
                         <p className="math-option-number">{el.number}</p>
                         <p className="math-option-title">{el.title}</p>
