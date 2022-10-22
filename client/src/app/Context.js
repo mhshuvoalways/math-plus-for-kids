@@ -30,8 +30,6 @@ const Index = ({ children }) => {
     wrongAnswer: 0,
   });
 
-  const totalQuestions = process.env.REACT_APP_TOTAL_QUESTION;
-
   useEffect(() => {
     if (answare.length === mathCount.serialIndex + 1) {
       let score = 0;
@@ -145,9 +143,22 @@ const Index = ({ children }) => {
   const examIDgenetator = () => {
     const eId = uuidv4();
     setExamID(eId);
-    Axios.post("/api/exams", { examID: eId, sessionID: sessionLocal })
-      .then((response) => {
-        console.log(response.data.message);
+    Axios.post("/api/drills", {
+      drillID: modal.modalObj._id,
+      sessionID: sessionLocal,
+    })
+      .then(() => {
+        Axios.post("/api/exams", {
+          drillID: modal.modalObj._id,
+          examID: eId,
+          sessionID: sessionLocal,
+        })
+          .then((response) => {
+            console.log(response.data.message);
+          })
+          .catch(() => {
+            console.log("Something went wrong!");
+          });
       })
       .catch(() => {
         console.log("Something went wrong!");
@@ -159,7 +170,7 @@ const Index = ({ children }) => {
       configuration: "horizontal",
       math: [],
     };
-    for (let i = 1; i <= totalQuestions; i++) {
+    for (let i = 1; i <= data.math.totalQuestions; i++) {
       const firstDigit = Math.round(Math.random() * 8 + 1);
       const secondDigit = Math.round(Math.random() * 9);
       let temp = 0;
