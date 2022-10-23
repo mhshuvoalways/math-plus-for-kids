@@ -4,7 +4,6 @@ const cors = require("cors");
 const morgan = require("morgan");
 const db = require("./config/db");
 
-const drillRouter = require("./routers/drillRouter");
 const examRouter = require("./routers/examRouter");
 const questionRouter = require("./routers/questionRouter");
 const sessionRouter = require("./routers/sessionRouter");
@@ -14,7 +13,6 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.use("/api", drillRouter);
 app.use("/api", examRouter);
 app.use("/api", questionRouter);
 app.use("/api", sessionRouter);

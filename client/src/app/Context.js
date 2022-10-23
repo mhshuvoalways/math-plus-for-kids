@@ -143,22 +143,13 @@ const Index = ({ children }) => {
   const examIDgenetator = () => {
     const eId = uuidv4();
     setExamID(eId);
-    Axios.post("/api/drills", {
+    Axios.post("/api/exams", {
       drillID: modal.modalObj._id,
+      examID: eId,
       sessionID: sessionLocal,
     })
-      .then(() => {
-        Axios.post("/api/exams", {
-          drillID: modal.modalObj._id,
-          examID: eId,
-          sessionID: sessionLocal,
-        })
-          .then((response) => {
-            console.log(response.data.message);
-          })
-          .catch(() => {
-            console.log("Something went wrong!");
-          });
+      .then((response) => {
+        console.log(response.data.message);
       })
       .catch(() => {
         console.log("Something went wrong!");
