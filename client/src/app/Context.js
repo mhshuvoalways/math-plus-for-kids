@@ -161,9 +161,11 @@ const Index = ({ children }) => {
       configuration: "horizontal",
       math: [],
     };
+
     for (let i = 1; i <= data.math.totalQuestions; i++) {
-      const firstDigit = Math.round(Math.random() * 8 + 1);
-      const secondDigit = Math.round(Math.random() * 9);
+      const number = modal.modalObj.number;
+      const firstDigit = Math.round(Math.random() * (number - 1) + 1);
+      const secondDigit = Math.round(Math.random() * (number - 1));
       let temp = 0;
       if (modal.operation === "+") {
         temp = firstDigit + secondDigit;
