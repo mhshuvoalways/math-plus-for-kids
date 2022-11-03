@@ -155,7 +155,7 @@ const Index = ({ children }) => {
         console.log("Something went wrong!");
       });
   };
-
+  
   const questionGenerator = () => {
     const mathTemp = {
       configuration: "horizontal",
