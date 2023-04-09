@@ -8,8 +8,8 @@ It lives at https://math-plus-app.vercel.app
 Feature:
 • Filter to your kid ability
 • Congratulations with confetti
-•  Browser detected
-•  Fresh and clean UI
+• Browser detected
+• Fresh and clean UI
 
 Technology:
 • Reactjs
