@@ -64,6 +64,7 @@ const Index = ({ children }) => {
         temp[findData2] = findData2.isActive = false;
       }
       setFilterData(temp);
+      setIsActiveId(id);
       localStorage.setItem("filterId", id);
     }
   };
@@ -155,7 +156,7 @@ const Index = ({ children }) => {
         console.log("Something went wrong!");
       });
   };
-  
+
   const questionGenerator = () => {
     const mathTemp = {
       configuration: "horizontal",

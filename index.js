@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const morgan = require("morgan");
 const db = require("./config/db");
 
@@ -17,9 +18,15 @@ app.use("/api", examRouter);
 app.use("/api", questionRouter);
 app.use("/api", sessionRouter);
 
-app.get("/", (req, res) => {
-  res.send(
-    "The Math Plus project aiming to help k-5 students get better at math"
+app.use(express.static(path.resolve(__dirname, "client", "build")));
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "client", "build", "index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
   );
 });
 

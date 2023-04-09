@@ -16,17 +16,9 @@ const ConfettiCompo = ({ answare, count }) => {
     <div>
       {count === "mathdone" && (
         <div>
-          {scorePercent === 100 && (
-            <Confetti
-              numberOfPieces="500"
-              style={{ width: "100%", height: "350px" }}
-            />
-          )}
+          {scorePercent === 100 && <Confetti numberOfPieces="500" />}
           {scorePercent <= 99 && scorePercent >= 50 && (
-            <Confetti
-              numberOfPieces="100"
-              style={{ width: "100%", height: "350px" }}
-            />
+            <Confetti numberOfPieces="100" />
           )}
         </div>
       )}

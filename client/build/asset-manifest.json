@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aabe91e4.css",
+    "main.js": "/static/js/main.9cb7d274.js",
+    "static/js/787.d5784714.chunk.js": "/static/js/787.d5784714.chunk.js",
+    "static/media/TeachingStudests.png": "/static/media/TeachingStudests.67202507ada25d8f9c17.png",
+    "static/media/ReadingBook.png": "/static/media/ReadingBook.58d0421f10d4020a186a.png",
+    "static/media/PenCalculate.png": "/static/media/PenCalculate.1f21f85221bc1b42fd71.png",
+    "static/media/GuideHuman3.svg": "/static/media/GuideHuman3.90c3041f917fa79e6ec895a126a4feb1.svg",
+    "static/media/Contact.svg": "/static/media/Contact.b20666ed4003b018f3dcbdb4414e520c.svg",
+    "static/media/GuideHuman4.svg": "/static/media/GuideHuman4.80a95be7ff3abf3b9a1dcce3023d6285.svg",
+    "static/media/GuideHuman2.svg": "/static/media/GuideHuman2.bb49a59edc43beceb92bc118d7c7cb6d.svg",
+    "static/media/Countbg.svg": "/static/media/Countbg.d1fca40b80aa8b60c0a88682140e2eb2.svg",
+    "static/media/GuideHuman1.svg": "/static/media/GuideHuman1.d1b965b90c7ec3382ce06cc752d92846.svg",
+    "static/media/Cross.svg": "/static/media/Cross.8459f8df7efddc27019ee2e17590213b.svg",
+    "static/media/Wrong.svg": "/static/media/Wrong.9a63e2eb0bc8f55889005a001693e462.svg",
+    "index.html": "/index.html",
+    "static/media/Right.svg": "/static/media/Right.290b890c356a0bf106c12d789a16ea03.svg",
+    "static/media/ArrowUp.svg": "/static/media/ArrowUp.2d0b24c7d2bc848cbc4b27bdfc62ae89.svg",
+    "static/media/ArrowDown.svg": "/static/media/ArrowDown.d05fe1aa51158604a4a589bf43911c34.svg",
+    "static/media/successmsg.svg": "/static/media/successmsg.8d51bcaf09809f71a568e22a2cf53306.svg",
+    "static/media/Grade1st-2.svg": "/static/media/Grade1st-2.a59a0df8dcb7d3e140e7956a63d6f105.svg",
+    "static/media/Grade1st.svg": "/static/media/Grade1st.0a7931f11b3e69e8f6a89d382bc3bb43.svg",
+    "static/media/Score.svg": "/static/media/Score.f41175ad696f081e20eb5c35c122ba64.svg",
+    "main.aabe91e4.css.map": "/static/css/main.aabe91e4.css.map",
+    "main.9cb7d274.js.map": "/static/js/main.9cb7d274.js.map",
+    "787.d5784714.chunk.js.map": "/static/js/787.d5784714.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aabe91e4.css",
+    "static/js/main.9cb7d274.js"
+  ]
+}
